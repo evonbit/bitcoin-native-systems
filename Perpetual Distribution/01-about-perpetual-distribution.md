@@ -41,7 +41,7 @@ Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the
 **Core Functions**  
 - Returns the canonical inscription ID for each Bitcoin block, via query.  
 - Returns the results of the holder lottery for each Bitcoin block, via query.  
-- *Note:* The indexer is queried via deployment inscription.  
+- *Note:* The indexer is queried via [deployment inscription](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0).  
 
 ### Asset Inscription  
 **Purpose:** Unique asset produced by a specific Bitcoin block.  
@@ -54,7 +54,7 @@ Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the
 - Produces art generated using Bitcoin block data as a generative seed.  
 - Sets collection parameters including supply pattern (e.g., bits contains 3b, min/max block height).  
 - Routes asset inscriptions to Supply Validation and Hash Lottery logic.  
-- Provides access to decentralized indexer queries via Ordinals explorer.  
+- Provides access to decentralized indexer queries via [Ordinals Explorer](https://ordinals.com/).  
 
 ---
 
@@ -64,7 +64,7 @@ To mint a new asset issued via Perpetual Distribution:
 1. **Check the authorized block winner**  
    - At **block height +4** (confirmation buffer), the lottery winner becomes available.  
    - To determine the winner, you can either:  
-     - Query a single block via an **Ordinals Explorer** using the *Authorization* input field, or  
+     - Query a single block via an [Ordinals Explorer](https://ordinals.com/) using the *Authorization* input field, or  
      - Run a script to construct a **local index** for all blocks or a specified range.  
    - The query will return the **winning block number**. The valid asset associated with this block number is the **authorized parent** for the new asset.  
 
@@ -88,9 +88,9 @@ To mint a new asset issued via Perpetual Distribution:
 
 ## Index Query Instructions  
 To produce or query the canonical collection index:  
-- Visit the collection deployment inscription.  
+- Visit the [collection deployment inscription](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0).  
 - To retrieve results, you can either:  
-  - Query a single block via an Ordinals Explorer, or  
+  - Query a single block via an [Ordinals Explorer](https://ordinals.com/), or  
   - Run a script to construct a local index covering all blocks or a specified range.  
 
 ---
@@ -109,7 +109,7 @@ To ensure the long-term issuance of collections such as Natcats (where supply is
 ---
 
 ## Natcats Deployment  
-See [here] for information regarding the deployment of Perpetual Distribution for Natcats.  
+See [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/03-natcats-perpetual-distribution-upgrade.md) for information regarding the deployment of Perpetual Distribution for Natcats.  
 
 ---
 

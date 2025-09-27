@@ -20,15 +20,15 @@ The systems required to index and distribute assets via Perpetual Distribution a
 ## Minting  
 - New supply can be inscribed via inscription tools that provide full support for **Ordinals protocol v2.2.1 or later**.  
 - There is **no mint fee**, though platform service fees may apply.  
-- Follow instructions in the Perpetual Distribution documentation to mint with the correct parameters and syntax.  
+- Follow instructions in the [Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md) to mint with the correct parameters and syntax.  
 
 ---
 
 ## Indexing  
 - The **Natcats index** updates automatically on-chain as new assets are inscribed.  
 - Canonical index inscription ID:  
-  `765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`  
-- For instructions on how to query the Natcats on-chain index or generate a local copy, see *How to Query Natcats Index*.  
+  [`765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)  
+- For instructions on how to query the Natcats on-chain index or generate a local copy, see the [Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md) (*see “How to Query Index” section*).  
 - The prior **TAP Protocol index** is no longer authoritative after block **NNNNNN**.  
 
 ---
@@ -37,7 +37,7 @@ The systems required to index and distribute assets via Perpetual Distribution a
 - **Generations 5+** render natively in Ordinals explorers by default once inscribed.  
 - **Generations 1–4** render via the preexisting UNAT pathway, but can optionally be **reinscribed** to enable native rendering.  
 - Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity.  
-- See *How to Enable Gen 1–4 Native Rendering* for reinscription instructions.  
+- See [How to Enable Gen 1–4 Native Rendering](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for reinscription instructions.  
 
 ---
 
