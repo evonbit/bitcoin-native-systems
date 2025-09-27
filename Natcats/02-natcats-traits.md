@@ -1,6 +1,6 @@
 # Natcats Traits  
 
-The data properties of a Natcat's Bitcoin block number determine its unique traits.  
+The data properties of each Natcat's Bitcoin block number determine its unique traits.  
 
 ---
 
@@ -80,13 +80,13 @@ For example:
 
 | Digit | Color      | Preview |
 |-------|-----------|---------|
-| 0     | Dark Grey | ![#545459](https://via.placeholder.com/15/545459/000000?text=+) `#545459` |
-| 1     | Purple    | ![#6A45FF](https://via.placeholder.com/15/6A45FF/000000?text=+) `#6A45FF` |
-| 2     | Lilac     | ![#B8A5E0](https://via.placeholder.com/15/B8A5E0/000000?text=+) `#B8A5E0` |
-| 3     | Yellow    | ![#FFE733](https://via.placeholder.com/15/FFE733/000000?text=+) `#FFE733` |
-| 4     | Blue      | ![#1075FF](https://via.placeholder.com/15/1075FF/000000?text=+) `#1075FF` |
-| 5     | Brown     | ![#7B543E](https://via.placeholder.com/15/7B543E/000000?text=+) `#7B543E` |
-| 6     | Grey      | ![#C5C5D3](https://via.placeholder.com/15/C5C5D3/000000?text=+) `#C5C5D3` |
-| 7     | Green     | ![#12C35A](https://via.placeholder.com/15/12C35A/000000?text=+) `#12C35A` |
-| 8     | Pink      | ![#FF5DB5](https://via.placeholder.com/15/FF5DB5/000000?text=+) `#FF5DB5` |
-| 9     | Orange    | ![#FF5608](https://via.placeholder.com/15/FF5608/000000?text=+) `#FF5608` |
+| 0     | Dark Grey | <span style="display:inline-block;width:15px;height:15px;background-color:#545459;border-radius:3px;"></span> `#545459` |
+| 1     | Purple    | <span style="display:inline-block;width:15px;height:15px;background-color:#6A45FF;border-radius:3px;"></span> `#6A45FF` |
+| 2     | Lilac     | <span style="display:inline-block;width:15px;height:15px;background-color:#B8A5E0;border-radius:3px;"></span> `#B8A5E0` |
+| 3     | Yellow    | <span style="display:inline-block;width:15px;height:15px;background-color:#FFE733;border-radius:3px;"></span> `#FFE733` |
+| 4     | Blue      | <span style="display:inline-block;width:15px;height:15px;background-color:#1075FF;border-radius:3px;"></span> `#1075FF` |
+| 5     | Brown     | <span style="display:inline-block;width:15px;height:15px;background-color:#7B543E;border-radius:3px;"></span> `#7B543E` |
+| 6     | Grey      | <span style="display:inline-block;width:15px;height:15px;background-color:#C5C5D3;border-radius:3px;"></span> `#C5C5D3` |
+| 7     | Green     | <span style="display:inline-block;width:15px;height:15px;background-color:#12C35A;border-radius:3px;"></span> `#12C35A` |
+| 8     | Pink      | <span style="display:inline-block;width:15px;height:15px;background-color:#FF5DB5;border-radius:3px;"></span> `#FF5DB5` |
+| 9     | Orange    | <span style="display:inline-block;width:15px;height:15px;background-color:#FF5608;border-radius:3px;"></span> `#FF5608` |
