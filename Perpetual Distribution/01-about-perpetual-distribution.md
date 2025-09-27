@@ -65,7 +65,7 @@ To mint a new asset issued via Perpetual Distribution:
    - At **block height +4** (confirmation buffer), the lottery winner becomes available.  
    - To determine the winner, you can either:  
      - Query a single block via an [Ordinals Explorer](https://ordinals.com/) using the *Authorization* input field, or  
-     - Run a script to construct a **local index** for all blocks or a specified range.  
+     - Run the [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/scripts/authorization-script.py) to construct a local index for all blocks or a specified range.  
    - The query will return the **winning block number**. The valid asset associated with this block number is the **authorized parent** for the new asset.  
 
 2. **If you hold the authorized block winner**  
@@ -91,7 +91,7 @@ To produce or query the canonical collection index:
 - Visit the [collection deployment inscription](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0).  
 - To retrieve results, you can either:  
   - Query a single block via an [Ordinals Explorer](https://ordinals.com/), or  
-  - Run a script to construct a local index covering all blocks or a specified range.  
+  - Run the [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/scripts/indexing-script.py) to construct a local index covering all blocks or a specified range.  
 
 ---
 
