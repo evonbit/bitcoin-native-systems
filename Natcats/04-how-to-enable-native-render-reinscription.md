@@ -8,7 +8,10 @@
 
 ---
 
-## Requirements  
-- Must be a **direct reinscription of the original asset**.  
-- Must **delegate to the Natcats Deployment Inscription ID**.  
-- Content may be left blank.  
+## Requirements
+- Must be a **direct reinscription of the original asset**.
+- Must **delegate to the Natcats Deployment Inscription ID**:
+```
+  765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0
+```
+- Content may be left blank.
