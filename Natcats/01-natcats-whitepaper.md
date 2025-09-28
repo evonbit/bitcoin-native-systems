@@ -5,7 +5,7 @@ evonbit
 ---
 
 ## Abstract  
-Natcats are collectible digital cats produced by the Bitcoin blockchain. A Natcat is produced when specific patterns are generated within a Bitcoin block’s Bits field, with the data properties for the block determining the cat’s unique traits. All Natcats systems are deployed on-chain via Bitcoin Ordinals, ensuring autonomous production for more than a century to come. New cats are distributed automatically to Natcats holders as a P2P yield.  
+Natcats are collectible digital cats produced by the Bitcoin blockchain. A Natcat is produced when specific patterns are generated within a Bitcoin block’s Bits field, with the data properties for the block determining the cat’s unique traits. All Natcats systems are deployed on-chain via Bitcoin Ordinals, enabling autonomous production for up to 150+ years. New cats are distributed automatically to Natcats holders.  
 
 ---
 
@@ -71,7 +71,7 @@ Querying this indexer returns the canonical inscription ID and authorized block 
 On its launch in February 2024, Natcats pioneered the Digital Matter Theory **Unique Non-Arbitrary Token (UNAT)** standard. In October 2025, Natcats enabled **P2P Perpetual Distribution** and native rendering, to support full decentralization of distribution, indexing, and rendering for the UNAT framework.  
 
 ### 5.2 Rendering Paths  
-The first four generations of Natcats render via the UNAT standard default render pathway, which requires UNAT-specific wallet support to display on-chain artwork. Gen 1–4 Natcats can optionally be **reinscribed** to enable native rendering, which renders natively in Ordinals explorers.  
+The first four generations of Natcats render via the UNAT standard default render pathway, which requires UNAT-specific wallet support to display on-chain artwork. Gen 1–4 Natcats can optionally be **reinscribed** to enable native rendering, which renders natively in Ordinals explorers with full support for Ordinals version 2.2.1 or later.  
 
 See [How to Enable Native Render Reinscription](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for detailed native render reinscription instructions.  
 
@@ -90,7 +90,7 @@ Examples
 - [Magic Eden Marketplace](https://magiceden.io/ordinals/marketplace/dmtnatcats)  
 - [Discord](https://discord.gg/PaQPwWXUSz)  
 - [GitHub](https://github.com/evonbit)  
-- Viewer (View cats + download image file)  
+- [Viewer (View cats + download image file)](https://peertopeerelectroniccatssystem.com/cats/)  
 
 ### Related Links  
 - [Ordinals Documentation](https://docs.ordinals.com/)  
