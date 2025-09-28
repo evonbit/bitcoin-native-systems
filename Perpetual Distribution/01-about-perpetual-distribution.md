@@ -7,7 +7,7 @@ The model uses Bitcoin block data as an immutable generative data input to:
 (A) dynamically issue asset supply, one per eligible Bitcoin block, and  
 (B) allocate new assets within a P2P network as a yield.  
 
-Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the Unique Non-Arbitrary Token (UNAT) framework and indexing functionalities in a fully on-chain system that does not require third-party protocol or indexing. This enables decentralized production of Bitcoin-issued assets in perpetuity.  
+Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the Unique Non-Arbitrary Token (UNAT) framework and its required indexing functionalities in a fully on-chain system that does not require third-party protocol or indexing. This enables decentralized production of Bitcoin-issued assets in perpetuity.  
 
 ---
 
