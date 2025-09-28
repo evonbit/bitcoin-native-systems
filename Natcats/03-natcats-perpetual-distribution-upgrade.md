@@ -18,7 +18,7 @@ As of this update, all distribution and indexing systems are deployed fully on-c
 ## Minting  
 - New supply can be inscribed via inscription tools that provide full support for **Ordinals protocol v2.2.1 or later**.  
 - There is **no mint fee**, though platform service fees may apply.  
-- Follow detailed instructions in the [Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md) to mint with the correct parameters and syntax.  
+- Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
 
 ---
 
