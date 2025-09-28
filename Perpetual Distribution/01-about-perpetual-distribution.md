@@ -1,13 +1,13 @@
-# Bitcoin-Native Perpetual Distribution  
+# Bitcoin-Native P2P Perpetual Distribution  
 
 ## Introduction  
-Bitcoin-Native Perpetual Distribution (“Perpetual Distribution”) is a model for the autonomous generation and distribution of non-fungible assets on Bitcoin Ordinals.  
+Bitcoin-Native P2P Perpetual Distribution (“Perpetual Distribution”) is a model for the autonomous generation and distribution of non-fungible assets on Bitcoin Ordinals.  
 
-The model uses Bitcoin block data as an immutable generative input to:  
+The model uses Bitcoin block data as an immutable generative data input to:  
 (A) dynamically issue asset supply, one per eligible Bitcoin block, and  
 (B) allocate new assets within a P2P network as a yield.  
 
-Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the Unique Non-Arbitrary Token (UNAT) framework and indexing functionalities in a fully on-chain system that does not require third-party protocol or indexing dependencies. This enables decentralized production of Bitcoin-issued assets in perpetuity.  
+Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the Unique Non-Arbitrary Token (UNAT) framework and indexing functionalities in a fully on-chain system that does not require third-party protocol or indexing. This enables decentralized production of Bitcoin-issued assets in perpetuity.  
 
 ---
 
@@ -33,7 +33,7 @@ Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the
 **Core Functions**  
 - Builds pool of assets in the collection that are eligible to win mint rights (all assets produced from a Bitcoin block earlier than the block for the new asset).  
 - Runs deterministic block-hash-derived lottery to select one asset from the pool.  
-- Authorizes the holder of this asset with exclusive rights to mint for a given block number.  
+- Authorizes the holder of this asset with exclusive rights to mint for a given block number, as a child of the authorized parent asset.  
 - *Note:* Pool requires an initial seed index of one or more assets.  
 
 ### Decentralized Indexer  
@@ -41,7 +41,7 @@ Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the
 **Core Functions**  
 - Returns the canonical inscription ID for each Bitcoin block, via query.  
 - Returns the results of the holder lottery for each Bitcoin block, via query.  
-- *Note:* The indexer is queried via [deployment inscription](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0).  
+- *Note:* The indexer is queried via the deployment inscription. 
 
 ### Asset Inscription  
 **Purpose:** Unique asset produced by a specific Bitcoin block.  
@@ -51,10 +51,10 @@ Perpetual Distribution is a new Digital Matter Theory primitive, which wraps the
 ### Deployment Inscription  
 **Purpose:** Holds art generation logic and supply parameters for a collection, and provides on-chain access to the collection index.  
 **Core Functions**  
-- Produces art generated using Bitcoin block data as a generative seed.  
-- Sets collection parameters including supply pattern (e.g., bits contains 3b, min/max block height).  
+- Sets parameters for art generated using Bitcoin block data as a generative seed.  
+- Sets collection supply parameters including supply pattern (e.g., bits contains 3b, min/max block height).  
 - Routes asset inscriptions to Supply Validation and Hash Lottery logic.  
-- Provides access to decentralized indexer queries via [Ordinals Explorer](https://ordinals.com/).  
+- Provides interface for indexer queries via Ordinals Explorer and for indexing scripts. 
 
 ---
 
@@ -69,16 +69,16 @@ To mint a new asset issued via Perpetual Distribution:
    - The query will return the **winning block number**. The valid asset associated with this block number is the **authorized parent** for the new asset.  
 
 2. **If you hold the authorized block winner**  
-   - Inscribe the new asset, ensuring the following requirements are met:  
+   - Inscribe the new asset according to the following requirements:   
      - The inscription is a **child of the authorized block winner inscription**.  
      - The inscription **delegates to the collection deployment inscription ID**.  
-     - The undelegated content includes the following JSON with the correct block and ticker reference, for example:  
+     - The inscription's undelegated content includes the following JSON with the correct block and ticker reference, for example:  
        ```json
        {"blk": 999999, "tick": "natcats"}
        ```  
        Replace `999999` with the target block number.  
        **Note:** The ticker is case sensitive.  
-   - Assets can be inscribed using any tool that supports **Ordinals protocol v2.2.1 or later**.  
+   - Assets can be inscribed using any tool with full support for **Ordinals protocol v2.2.1 or later**.  
 
 3. **Validation rules**  
    - Any inscription that fails these requirements will not render and will be automatically rejected by the index.  
@@ -87,24 +87,22 @@ To mint a new asset issued via Perpetual Distribution:
 ---
 
 ## Index Query Instructions  
-To produce or query the canonical collection index:  
-- Visit the [collection deployment inscription](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0).  
-- To retrieve results, you can either:  
-  - Query a single block via an [Ordinals Explorer](https://ordinals.com/), or  
-  - Run the [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/scripts/indexing-script.py) to construct a local index covering all blocks or a specified range.  
+To query the canonical collection index you can either:   
+- Visit the collection deployment inscription and query for a single block.
+- Run the [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/scripts/indexing-script.py) to construct a local index covering all blocks or a specified range.  
 
 ---
 
 ## Background: DMT UNAT  
-Perpetual Distribution builds on the **DMT UNAT standard**, pioneered by Natcats in February 2024. [Link](https://digital-matter-theory.gitbook.io/digital-matter-theory)  
+Perpetual Distribution builds on the **Digital Matter Theory UNAT standard**, pioneered by Natcats in February 2024. [Link](https://digital-matter-theory.gitbook.io/digital-matter-theory)  
 
-The UNAT standard introduced the concept of **generative artwork with asset supply governed directly by Bitcoin block data**. Perpetual Distribution builds on these foundations while addressing limitations around the **sustainable issuance of new supply**.  
+The UNAT standard introduced the concept of **generative artwork with asset supply governed directly by Bitcoin block data**. P2P Perpetual Distribution builds on these foundations while addressing the following limitations around the **sustainable issuance of new supply**:  
 
 - **Open mints** (first-come claims by Bitcoin block ID) were decentralized in principle, but in practice proved vulnerable to bots and unbalanced allocation.  
 - **Privileged authorization mints** (a central authority issues supply) avoided bots but introduced a **centralized dependency**, preventing guaranteed long-term issuance.  
-- In both cases, **third-party indexers** were required to track supply over time — a dependency that cannot guarantee **long-term operation**.  
+- In both cases, **third-party indexers** were required to track supply over time, which cannot guarantee **long-term operation**.  
 
-To ensure the long-term issuance of collections such as Natcats (where supply is produced autonomously over decades), it is necessary to enable both **decentralized issuance** and **balanced distribution controls**. Perpetual Distribution provides this by wrapping all logic and indexing in an on-chain system that requires no metaprotocol support.  
+To ensure the long-term issuance of collections such as Natcats (where supply has the potential to be produced autonomously over decades), it is necessary to enable both **decentralized issuance** and **balanced distribution controls**. P2P Perpetual Distribution provides this by wrapping all logic and indexing in an on-chain system that requires no metaprotocol support.  
 
 ---
 
