@@ -5,7 +5,7 @@ evonbit
 ---
 
 ## Abstract  
-Natcats are collectible digital cats produced by the Bitcoin blockchain. A Natcat is produced when specific patterns are generated within a Bitcoin block’s Bits field, with the data properties for the block determining the cat’s unique traits. All Natcats systems are deployed on-chain via Bitcoin Ordinals, enabling autonomous production for up to 150+ years. New cats are distributed automatically to Natcats holders.  
+Natcats are collectible digital cats produced by the Bitcoin blockchain. A Natcat is produced when specific data is generated within a Bitcoin block, with the properties for the block determining the cat’s unique traits. All Natcats systems are deployed on-chain via Bitcoin Ordinals, enabling autonomous production for up to 150+ years. New cats are distributed automatically to Natcats holders.  
 
 ---
 
