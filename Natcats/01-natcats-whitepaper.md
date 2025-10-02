@@ -52,7 +52,7 @@ An on-chain P2P Perpetual Distribution system automatically allocates mint right
 
 When a Bitcoin block containing the “3b” property is mined, the block’s hash is used as a deterministic seed to select a prior block from the set of earlier “3b” blocks. The Natcat associated with the winning block becomes the **authorized parent** for the new cat. Only this holder can inscribe the new Natcat. Other attempts will not render and are automatically rejected from indexing.  
 
-Mints have no expiry, require no central coordination, and can be made using any inscription tool that provides full support for **Ordinals protocol v2.2.1 or later**. Ten percent (10%) of new Natcats are allocated to the **Natcats Treasury**.  
+Mints have no expiry, require no central coordination, and can be made using any inscription tool that provides full support for **Ordinals protocol v2.2.1 or later**. Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, to enable a combination of long term holding, partnerships, sales, and acquisitions in support of the project’s legacy.  
 
 [Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md)  
 
@@ -69,9 +69,9 @@ Querying this indexer returns the canonical inscription ID and authorized block 
 On its launch in February 2024, Natcats pioneered the Digital Matter Theory **Unique Non-Arbitrary Token (UNAT)** standard. In October 2025, Natcats enabled **P2P Perpetual Distribution** and native rendering, to support full decentralization of distribution, indexing, and rendering for the UNAT framework.  
 
 ### 5.2 Rendering Paths  
-The first four generations of Natcats render via the UNAT standard default render pathway, which requires UNAT-specific wallet support to display on-chain artwork. Gen 1–4 Natcats can optionally be **reinscribed** to enable native rendering, which renders natively in Ordinals explorers with full support for Ordinals version 2.2.1 or later.  
+The first four generations of Natcats render via the UNAT standard default render pathway, which requires UNAT-specific wallet support to display on-chain artwork. Gen 1–4 Natcats can optionally be **reinscribed** to enable native rendering, which renders natively in Ordinals explorers with full support for Ordinals version 2.2.1 or later. Reinscription instructions can be found at [COMING SOON].  
 
-See [How to Enable Native Render Reinscription](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for detailed native render reinscription instructions.  
+<!-- See [How to Enable Native Render Reinscription](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for detailed native render reinscription instructions.   --->
 
 Generations **5 and beyond** use native rendering by default.  
 

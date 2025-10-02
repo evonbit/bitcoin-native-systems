@@ -1,6 +1,6 @@
 # Natcats P2P Perpetual Distribution Upgrade  
 
-Natcats will enable **P2P Perpetual Distribution** beginning at Bitcoin block **NNNNNN**. After this upgrade, all future Natcats supply produced by the Bitcoin blockchain will be allocated directly to Natcats holders.  
+Natcats will enable **P2P Perpetual Distribution** beginning at Bitcoin block **919296**. After this upgrade, all future Natcats supply produced by the Bitcoin blockchain will be allocated directly to Natcats holders.  
 
 As of this update, all distribution and indexing systems are deployed fully on-chain on **Ordinals**, without third-party dependencies, ensuring the **decentralized production** of Bitcoin’s first natively generated art collection over the years to come.  
 
@@ -34,7 +34,9 @@ As of this update, all distribution and indexing systems are deployed fully on-c
 - **Generations 5+** render natively in Ordinals explorers by default once inscribed.  
 - **Generations 1–4** render via the preexisting UNAT pathway (requires UNAT specific wallet support), but can optionally be **reinscribed** to enable native rendering.  
 - Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity.  
-- See [How to Enable Gen 1–4 Native Rendering](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for reinscription instructions.  
+<!-- - See [How to Enable Gen 1–4 Native Rendering](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for reinscription instructions.  --->
+- Reinscription Instructions can be found at [COMING SOON]
+
 
 ---
 
