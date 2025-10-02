@@ -65,7 +65,7 @@ Digits are read from **right to left**.
 For example:  
 - If the block number is **42340** → the **first digit (from the right)** is `0`.  
 - Digit `0` corresponds to **Dark Grey**.  
-- So in this case, the **Face** would be Dark Grey.  
+- In this case, the Natcat's **Face** would be Dark Grey.  
 
 ### Digit Position → Cat Component
 - **Position 1** → Face  
@@ -74,19 +74,19 @@ For example:
 - **Position 4** → Right Ear  
 - **Position 5** → Nose  
 - **Position 6** → Stripes  
-- **Position 7** → Tooth Type  
+- **Position 7** → Tooth Type (uses distinct color map, not shown)
 
 ### Digit → Color
 
 | Digit | Color      | Preview |
 |-------|-----------|---------|
-| 0     | Dark Grey | <span style="display:inline-block;width:15px;height:15px;background-color:#545459;border-radius:3px;"></span> `#545459` |
-| 1     | Purple    | <span style="display:inline-block;width:15px;height:15px;background-color:#6A45FF;border-radius:3px;"></span> `#6A45FF` |
-| 2     | Lilac     | <span style="display:inline-block;width:15px;height:15px;background-color:#B8A5E0;border-radius:3px;"></span> `#B8A5E0` |
-| 3     | Yellow    | <span style="display:inline-block;width:15px;height:15px;background-color:#FFE733;border-radius:3px;"></span> `#FFE733` |
-| 4     | Blue      | <span style="display:inline-block;width:15px;height:15px;background-color:#1075FF;border-radius:3px;"></span> `#1075FF` |
-| 5     | Brown     | <span style="display:inline-block;width:15px;height:15px;background-color:#7B543E;border-radius:3px;"></span> `#7B543E` |
-| 6     | Grey      | <span style="display:inline-block;width:15px;height:15px;background-color:#C5C5D3;border-radius:3px;"></span> `#C5C5D3` |
-| 7     | Green     | <span style="display:inline-block;width:15px;height:15px;background-color:#12C35A;border-radius:3px;"></span> `#12C35A` |
-| 8     | Pink      | <span style="display:inline-block;width:15px;height:15px;background-color:#FF5DB5;border-radius:3px;"></span> `#FF5DB5` |
-| 9     | Orange    | <span style="display:inline-block;width:15px;height:15px;background-color:#FF5608;border-radius:3px;"></span> `#FF5608` |
+| 0     | Dark Grey | <span style="display:inline-block;width:15px;height:15px;background-color:#545459;border:1px solid #000;border-radius:3px;"></span> `#545459` |
+| 1     | Purple    | <span style="display:inline-block;width:15px;height:15px;background-color:#6A45FF;border:1px solid #000;border-radius:3px;"></span> `#6A45FF` |
+| 2     | Lilac     | <span style="display:inline-block;width:15px;height:15px;background-color:#B8A5E0;border:1px solid #000;border-radius:3px;"></span> `#B8A5E0` |
+| 3     | Yellow    | <span style="display:inline-block;width:15px;height:15px;background-color:#FFE733;border:1px solid #000;border-radius:3px;"></span> `#FFE733` |
+| 4     | Blue      | <span style="display:inline-block;width:15px;height:15px;background-color:#1075FF;border:1px solid #000;border-radius:3px;"></span> `#1075FF` |
+| 5     | Brown     | <span style="display:inline-block;width:15px;height:15px;background-color:#7B543E;border:1px solid #000;border-radius:3px;"></span> `#7B543E` |
+| 6     | Grey      | <span style="display:inline-block;width:15px;height:15px;background-color:#C5C5D3;border:1px solid #000;border-radius:3px;"></span> `#C5C5D3` |
+| 7     | Green     | <span style="display:inline-block;width:15px;height:15px;background-color:#12C35A;border:1px solid #000;border-radius:3px;"></span> `#12C35A` |
+| 8     | Pink      | <span style="display:inline-block;width:15px;height:15px;background-color:#FF5DB5;border:1px solid #000;border-radius:3px;"></span> `#FF5DB5` |
+| 9     | Orange    | <span style="display:inline-block;width:15px;height:15px;background-color:#FF5608;border:1px solid #000;border-radius:3px;"></span> `#FF5608` |

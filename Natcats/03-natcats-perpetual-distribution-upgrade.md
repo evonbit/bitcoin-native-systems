@@ -28,7 +28,7 @@ All P2PPD distribution and indexing systems are deployed fully on-chain on **Ord
 ## Indexing  
 - The **Natcats index** updates automatically on-chain as new assets are inscribed, published at:  
   [`765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)  
-- For instructions on how to query the Natcats on-chain index and/or generate a local copy, see the [Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md) (*see “How to Query Index” section*).  
+- For instructions on how to query the Natcats on-chain index and/or generate a local copy, see the [Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-about-perpetual-distribution.md) (*see “How to Query Index” section*).
 - The on chain index serves as the authorative index moving forward. The prior **TAP Protocol index** is valid only up to block **NNNNNN**, and above this block is no longer authorative.  
 
 ---

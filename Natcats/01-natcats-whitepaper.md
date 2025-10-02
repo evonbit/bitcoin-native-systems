@@ -59,7 +59,7 @@ Mints have no expiry, require no central coordination, and can be made using any
 ### 4.3 Decentralized Indexing  
 Natcats are indexed automatically via an on-chain decentralized indexer as they are produced, published on-chain at inscription [765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)
 
-Querying this indexer returns the canonical inscription ID and authorized block winner for each cat, updating automatically and in perpetuity as new cats are produced and inscribed by holders. Run [these scripts](https://github.com/evonbit/bitcoin-native-systems/tree/main/P2P%20Perpetual%20Distribution/02-scripts) to generate a complete local copy of either dataset from the on-chain index. 
+Querying this indexer returns the canonical inscription ID and authorized block winner for each cat, updating automatically and in perpetuity as new cats are produced and inscribed by holders. Run [these scripts](https://github.com/evonbit/bitcoin-native-systems/tree/main/P2P%20Perpetual%20Distribution/02-scripts) to generate a local copy of either dataset from the on-chain index. 
 
 ---
 
