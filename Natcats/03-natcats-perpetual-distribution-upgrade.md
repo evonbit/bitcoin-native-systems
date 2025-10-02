@@ -21,7 +21,7 @@ All P2PPD distribution and indexing systems are deployed fully on-chain on **Ord
 ## Minting  
 - New supply can be inscribed via inscription tools that provide full support for **Ordinals protocol v2.2.1 or later**.  
 - There is **no mint fee**, though platform service fees may apply.  
-- Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
+- Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
 
 ---
 
