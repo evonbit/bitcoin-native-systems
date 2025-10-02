@@ -54,12 +54,12 @@ When a Bitcoin block containing the “3b” property is mined, the block’s ha
 
 Mints have no expiry, require no central coordination, and can be made using any inscription tool that provides full support for **Ordinals protocol v2.2.1 or later**. Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, to enable a combination of long term holding, partnerships, sales, and acquisitions in support of the project’s legacy.  
 
-[Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md)  
+[Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md?plain=1)  
 
 ### 4.3 Decentralized Indexing  
 Natcats are indexed automatically via an on-chain decentralized indexer as they are produced, published on-chain at inscription [765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)
 
-Querying this indexer returns the canonical inscription ID and authorized block winner for each cat, updating automatically and in perpetuity as new cats are produced and inscribed by holders. Run [these scripts](https://github.com/evonbit/bitcoin-native-systems/tree/main/Perpetual%20Distribution/scripts) to generate a complete local copy of either dataset. 
+Querying this indexer returns the canonical inscription ID and authorized block winner for each cat, updating automatically and in perpetuity as new cats are produced and inscribed by holders. Run [these scripts](https://github.com/evonbit/bitcoin-native-systems/tree/main/P2P%20Perpetual%20Distribution/02-scripts?plain=1) to generate a complete local copy of either dataset from the on-chain index. 
 
 ---
 
