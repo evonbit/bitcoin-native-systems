@@ -69,11 +69,14 @@ Querying this indexer returns the canonical inscription ID and authorized block 
 On its launch in February 2024, Natcats pioneered the Digital Matter Theory **Unique Non-Arbitrary Token (UNAT)** standard. In October 2025, Natcats enabled **P2P Perpetual Distribution** and native rendering, to support full decentralization of distribution, indexing, and rendering for the UNAT framework.  
 
 ### 5.2 Rendering Paths  
-The first four generations of Natcats render via the UNAT standard default render pathway, which requires UNAT-specific wallet support to display on-chain artwork. Gen 1–4 Natcats can optionally be **reinscribed** to enable native rendering, which renders natively in Ordinals explorers with full support for Ordinals version 2.2.1 or later. Reinscription instructions can be found at [COMING SOON].  
+Generations **5 and beyond** use native rendering by default.  
+
+Generations 1-4  render via the UNAT default render pathway, which requires UNAT-specific wallet support to display on-chain artwork. Gen 1–4 Natcats can optionally be **reinscribed** to enable native rendering, which renders natively in Ordinals explorers. 
+
+Native Render Reinscription instructions can be found at [COMING SOON].
 
 <!-- See [How to Enable Native Render Reinscription](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for detailed native render reinscription instructions.   --->
 
-Generations **5 and beyond** use native rendering by default.  
 
 Examples  
 - [Gen 1 UNAT Default Inscription](https://ordinals.com/inscription/5c26e644c0a93f02f964182fdab436378405d0f6639ca20134f747b160457e76i0)  
