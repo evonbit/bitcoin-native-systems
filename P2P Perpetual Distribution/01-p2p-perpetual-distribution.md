@@ -65,7 +65,7 @@ To mint a new asset issued via Perpetual Distribution:
    - At **block height +4** (confirmation buffer), the lottery winner becomes available.  
    - To determine the winner, you can either:  
      - Query a single block via the deployment inscription in ordinals explorer using the *Authorization* input field, or  
-     - Run the [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/authorization-script.py?plain=1) to construct a local index for all blocks or a specified range.  
+     - Run the [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/authorization-script.py) to construct a local index for all blocks or a specified range.  
    - The query will return the **winning block number**. The valid asset associated with this block number is the **authorized parent** for the new asset.  
 
 2. **If you hold the authorized block winner**  
@@ -88,8 +88,8 @@ To mint a new asset issued via Perpetual Distribution:
 
 ## Index Query Instructions  
 To query the canonical collection index you can either:   
-- Query a single block via the deployment inscription in ordinals explorer using the *Index* input field
-- Run the [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/index-script.py?plain=1) to construct a local index covering all blocks or a specified range.  
+- Query a single block via the deployment inscription in ordinals explorer using the *Index* input field  
+- Run the [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/index-script.py) to construct a local index covering all blocks or a specified range.  
 
 ---
 
@@ -107,7 +107,7 @@ To ensure the long-term issuance of collections such as Natcats (where supply ha
 ---
 
 ## Natcats Deployment  
-See [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/03-natcats-perpetual-distribution-upgrade.md?plain=1) for information regarding the deployment of Perpetual Distribution for Natcats.  
+See [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/03-natcats-perpetual-distribution-upgrade.md) for information regarding the deployment of Perpetual Distribution for Natcats.  
 
 ---
 
