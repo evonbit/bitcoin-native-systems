@@ -1,17 +1,18 @@
 # Natcats P2P Perpetual Distribution Upgrade  
 
-Natcats will enable **P2P Perpetual Distribution** beginning at Bitcoin block **919296**. After this upgrade, all future Natcats supply produced by the Bitcoin blockchain will be allocated directly to Natcats holders.  
+Natcats will enable **P2P Perpetual Distribution** beginning at Bitcoin block **919296**. After this block, all future Natcats supply produced by the Bitcoin blockchain will be allocated directly to Natcats holders.  
 
-As of this update, all distribution and indexing systems are deployed fully on-chain on **Ordinals**, without third-party dependencies, ensuring the **decentralized production** of Bitcoin’s first natively generated art collection over the years to come.  
+All distribution and indexing systems are deployed fully on-chain on **Ordinals**, without third-party dependencies, ensuring the **decentralized production** of Bitcoin’s first natively generated art collection over the years to come.  
 
 ---
 
 ## Supply & Allocation  
-- New Natcats supply is produced when the substring **“3b”** appears in Bitcoin’s difficulty field. Each supply event produces a **generation of 2,016 Natcats**.  
+- Natcats are produced when the pattern "3b" occurs in the hexadecimal representation of Bitcoin's difficulty data. This property is rare and has occurred only four times in Bitcoin’s history. Each occurrence produces 2,016 Natcats.
 - Bitcoin difficulty adjusts every **2,016 blocks** (roughly every two weeks) and the Bits field is recalculated at each adjustment, creating a new chance for the “3b” pattern.  
-- **As of the upgrade**, when a new generation of Natcats is produced, mint rights for each individual Natcat are assigned automatically to an existing holder via a **block-hash lottery**.  
+- Prior to the update, new supply would become available via open mint, a process that is vulnerable to bot minting and allocation outside of the holder base. 
+- **As of the upgrade**, when a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats via lottery. The selected Natcat becomes the authorized parent for the new cat.  
 - The holder of the winning Natcat (the **authorized parent**) has exclusive rights to inscribe the new asset. All other attempts will be rejected by on-chain indexing and will not render.  
-- This system is operated autonomously on-chain, without centralized dependencies, and does not expire.  
+- This system is operated autonomously on-chain, without centralized dependencies, and does not expire.
 
 ---
 
@@ -26,7 +27,7 @@ As of this update, all distribution and indexing systems are deployed fully on-c
 - The **Natcats index** updates automatically on-chain as new assets are inscribed, published at:  
   [`765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)  
 - For instructions on how to query the Natcats on-chain index and/or generate a local copy, see the [Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/Perpetual%20Distribution/01-about-perpetual-distribution.md) (*see “How to Query Index” section*).  
-- The prior **TAP Protocol index** is valid only up to block **NNNNNN**, and above this block is no longer authorative.  
+- The on chain index serves as the authorative index moving forward. The prior **TAP Protocol index** is valid only up to block **NNNNNN**, and above this block is no longer authorative.  
 
 ---
 
@@ -41,7 +42,7 @@ As of this update, all distribution and indexing systems are deployed fully on-c
 ---
 
 ## Treasury  
-- **10% of all future supply issuance** is reserved for the **Natcats Treasury**.  
+- Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, to enable a combination of long term holding, partnerships, sales, and acquisitions in support of the project’s legacy.  
 
 ---
 
