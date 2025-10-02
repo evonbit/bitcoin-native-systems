@@ -12,8 +12,9 @@ All P2PPD distribution and indexing systems are deployed fully on-chain on **Ord
 - Prior to the update, new supply would become available via open mint, a process that is vulnerable to bot minting and allocation outside of the holder base. 
 - **As of the update**, new Natcats will be directly allocated to Natcats holders via on-chain lottery. When a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats. The selected Natcat becomes the authorized parent for the new cat.
 - The holder of the winning Natcat (the **authorized parent**) has exclusive rights to inscribe the new asset. All other attempts will be rejected by on-chain indexing and will not render.  
+- New Natcats are automatically added to the pool at the time of block mine and become elligible to win future blocks. 
 - This system is operated autonomously on-chain, without centralized dependencies.
-- Mint rights do not expire, and transfer with the parent Natcat until utilized. 
+- Mint rights do not expire, and transfer with a parent Natcat until utilized. 
 
 ---
 
