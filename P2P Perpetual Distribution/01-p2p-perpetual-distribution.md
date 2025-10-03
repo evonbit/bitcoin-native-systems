@@ -12,9 +12,9 @@ Perpetual Distribution is a new Digital Matter Theory (DMT) primitive, which wra
 ---
 
 ## Overview  
-- **Supply controlled by Bitcoin block data** — Asset supply is issued based on the non-arbitrary occurrence of patterns in Bitcoin block data, with the potential to produce new assets dynamically over time.  
-- **P2P yield for holders** — Mint rights for each new asset are allocated automatically to a holder of assets in a pool, selected via block-hash lottery.  
-- **Decentralized indexing** — Index is tracked on chain, and updates automatically and in perpetuity as new assets are produced. 
+- **Supply controlled by Bitcoin block data** — Asset supply is issued based on the occurrence of patterns in Bitcoin block data, with the potential to produce new assets dynamically over time.  
+- **P2P yield for holders** — Mint rights for each new asset are allocated automatically to a holders of assets in a pool, selected via block-hash lottery.  
+- **Decentralized indexing** — Collection index is tracked on chain, and updates automatically and in perpetuity as new assets are produced. 
 - **Native rendering & validation** — Assets self-validate against the on-chain index and render natively in Ordinals explorers.  
 
 ---
@@ -23,6 +23,7 @@ Perpetual Distribution is a new Digital Matter Theory (DMT) primitive, which wra
 
 ### On-chain Supply Validator
 **Purpose:** Determines asset supply based on emergent Bitcoin block data.  
+
 **Core Functions**  
 - Validates eligible Bitcoin blocks against specific conditions as they are mined (e.g., bits contains “3b”, block height contains “69”) via recursive endpoints.  
 - Authorizes production of one asset in a collection per validated Bitcoin block.  
