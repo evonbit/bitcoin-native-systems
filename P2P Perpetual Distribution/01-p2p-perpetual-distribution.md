@@ -40,7 +40,7 @@ Perpetual Distribution is a new Digital Matter Theory (DMT) primitive, which wra
 - *Note: Pool requires an initial seed index of one or more assets.* 
 
 ### On-chain Decentralized Indexer  
-**Purpose:** Maintains the canonical index of valid mints on-chain as new assets are inscribed.  
+**Purpose:** Maintains the on-chain index for a collection as new assets are inscribed.  
 
 **Core Functions**  
 - Returns the canonical inscription ID for each Bitcoin block, via query.  
