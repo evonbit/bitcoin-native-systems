@@ -91,7 +91,7 @@ To mint a new asset issued via Perpetual Distribution:
 
 ---
 
-## Index Query Instructions  
+## How to Query On-chain Index
 To query the collection index and find the canonical ID for a given asset you can either:   
 - Query for a Bitcoin block number via the deployment inscription in ordinals explorer using the *Index* input field. This will produce the ID for its associated asset.   
 - Run the [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/index-script.py) to construct a local index of assets associated with all blocks or a specified range.  
@@ -104,7 +104,7 @@ Perpetual Distribution builds on the **Digital Matter Theory UNAT standard**, pi
 The UNAT standard introduced the concept of **generative artwork with asset supply governed by emergent Bitcoin block data**. P2P Perpetual Distribution builds on these foundations while addressing the following limitations regarding **sustainable issuance of dynamically issued supply**:  
 
 - **Open UNAT mints** (first-come claims by Bitcoin block ID) were decentralized in principle, but in practice proved vulnerable to bots and unbalanced allocation.  
-- **Privileged authorization UNAT mints** (a central authority issues supply) avoid bots successfully but introduce a **centralized dependency**. This is suitable for initial one-time mint distribution, but cannot guarantee dynamic issuance long-term .   
+- **Privileged authorization UNAT mints** (a central authority issues supply) avoid bots successfully but introduce a **centralized dependency**. This is suitable for initial one-time mint distribution, but cannot guarantee issuance long-term .   
 - In both cases, **third-party indexers** were required to track supply over time, which cannot guarantee **long-term operation**.  
 
 To ensure the long-term issuance of collections such as Natcats (where supply has the potential to be produced autonomously over decades), it is necessary to support both **decentralized issuance** and **balanced distribution controls**. This is provided by P2P Perpetual Distribution.  
