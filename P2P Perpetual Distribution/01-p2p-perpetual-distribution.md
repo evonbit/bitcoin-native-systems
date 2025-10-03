@@ -13,7 +13,7 @@ Perpetual Distribution is a new Digital Matter Theory (DMT) primitive, which wra
 
 ## Overview  
 - **Supply controlled by Bitcoin block data** — Asset supply is issued based on the occurrence of patterns in Bitcoin block data, with the potential to produce new assets dynamically over time.  
-- **P2P yield for holders** — Mint rights for each new asset are allocated automatically to a holders of assets in a pool, selected via block-hash lottery.  
+- **On-chain Lottery** — Mint rights for each new asset are allocated automatically to a holders of assets in a pool, selected via block-hash lottery.  
 - **Decentralized indexing** — Collection index is tracked on chain, and updates automatically and in perpetuity as new assets are produced. 
 - **Native rendering & validation** — Assets self-validate against the on-chain index and render natively in Ordinals explorers.  
 
@@ -31,26 +31,30 @@ Perpetual Distribution is a new Digital Matter Theory (DMT) primitive, which wra
 
 ### On-chain Block Hash Lottery 
 **Purpose:** Selects an authorized minter for each new asset via on-chain lottery.  
+
 **Core Functions**  
-- Builds pool of assets in the collection that are eligible to win mint rights for a new asset (assets associated with block heights lower than the block associated with the new asset).  
+- Builds pool of assets in the collection that are eligible to win mint rights for a new asset (assets associated with lower block heights than the target asset).  
 - Runs deterministic block-hash-derived lottery to randomly select one asset from the pool, which becomes the "authorized parent."  
 - Holder of the authorized parent has exclusive rights to mint the new asset, as a child of the authorized parent.  
 - New blocks are added to the pool as they are mined, and become eligible to win for later block heights.
-- *Note:* Pool requires an initial seed index of one or more assets.  
+- *Note: Pool requires an initial seed index of one or more assets.* 
 
 ### On-chain Decentralized Indexer  
 **Purpose:** Maintains the canonical index of valid mints on-chain as new assets are inscribed.  
+
 **Core Functions**  
 - Returns the canonical inscription ID for each Bitcoin block, via query.  
 - Returns the results of the holder lottery for each Bitcoin block, via query.
 
 ### Asset Inscription  
 **Purpose:** Unique asset produced by a specific Bitcoin block.  
+
 **Core Functions**  
 - Validates against the decentralized indexer and renders if it passes validation.  
 
 ### Deployment Inscription  
 **Purpose:** Holds art generation logic and supply parameters for a collection, and provides on-chain access to the collection index.  
+
 **Core Functions**  
 - Sets parameters for art generated using Bitcoin block data as a generative seed.  
 - Sets collection supply parameters including supply pattern (e.g., bits contains 3b).  
