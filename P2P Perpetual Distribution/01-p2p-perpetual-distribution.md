@@ -99,13 +99,13 @@ To query the collection index and find the canonical ID for a given asset you ca
 ---
 
 ## Background: DMT UNAT  
-Perpetual Distribution builds on the **Digital Matter Theory UNAT standard**, pioneered by Natcats in February 2024. [Link](https://digital-matter-theory.gitbook.io/digital-matter-theory)  
+Perpetual Distribution builds on the **Digital Matter Theory Unique Non-Arbitrary Token standard**, pioneered by Natcats in February 2024. [Link](https://digital-matter-theory.gitbook.io/digital-matter-theory)  
 
-The UNAT standard introduced the concept of **generative artwork with asset supply governed by emergent Bitcoin block data**. P2P Perpetual Distribution builds on these foundations while addressing the following limitations regarding **sustainable issuance of dynamically issued supply**:  
+The UNAT standard introduced the concept of **generative artwork with asset supply governed by emergent Bitcoin block data**. P2P Perpetual Distribution builds on these foundations while addressing limitations regarding **sustainable issuance of new supply**:  
 
 - **Open UNAT mints** (first-come claims by Bitcoin block ID) were decentralized in principle, but in practice proved vulnerable to bots and unbalanced allocation.  
 - **Privileged authorization UNAT mints** (a central authority issues supply) avoid bots successfully but introduce a **centralized dependency**. This is suitable for initial one-time mint distribution, but cannot guarantee issuance long-term .   
-- In both cases, **third-party indexers** were required to track supply over time, which cannot guarantee **long-term operation**.  
+- In both cases, **third-party indexers** are required to track supply over time, which cannot guarantee **long-term operation**.  
 
 To ensure the long-term issuance of collections such as Natcats (where supply has the potential to be produced autonomously over decades), it is necessary to support both **decentralized issuance** and **balanced distribution controls**. This is provided by P2P Perpetual Distribution.  
 
