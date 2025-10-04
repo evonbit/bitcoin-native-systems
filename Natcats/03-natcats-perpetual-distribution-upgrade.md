@@ -8,10 +8,10 @@ All P2PPD distribution and indexing systems are deployed fully on-chain on **Ord
 
 ## Supply & Allocation  
 - Natcats are produced when the pattern 3b occurs in the hexadecimal representation of Bitcoin’s block difficulty data. This property is rare and has occurred only four times in Bitcoin’s history. Each occurrence produces **2,016 Natcats**.
-- **Prior to the update**, new supply would become available via open mint, a process that is vulnerable to bot minting and allocation outside of the holder base. **As of the update**, each new Natcat will instead be allocated automatically to a specific Natcat holder.
-- New Natcats are allocated to holders via an on-chain lottery. when a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats. The selected Natcat becomes the **authorized parent** for the new Natcat.
+- **Prior to the update**, new Natcats supply would become available via open mint, a process that is vulnerable to bot minting and allocation outside of the holder base. **As of the update**, each new Natcat will instead be allocated automatically to a specific Natcat holder.
+- P2PPD allocates new Natcats to holders via an on-chain lottery. when a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats. The selected Natcat becomes the **authorized parent** for the new Natcat.
 - The holder of the authorized parent has exclusive rights to inscribe the new asset. All other attempts will be rejected by on-chain indexing and will not render.  
-- New Natcats are added to the index and the pool automatically, and become eligible to win Natcats on future blocks.
+- New Natcats are added to the pool automatically, and become eligible to win Natcats on future blocks.
 - Mint rights do not expire, and transfer with a parent Natcat until utilized. 
 - The system is operated autonomously on-chain, without centralized dependencies.
 
