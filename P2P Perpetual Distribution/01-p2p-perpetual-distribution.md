@@ -110,6 +110,10 @@ To ensure the long-term issuance of collections such as Natcats (where supply ha
 
 ---
 
+## Sample Deployment  
+The Perpetual Distribution deployment inscription for Natcats can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and routes to all Perpetual Distribution modules. 
+
+
 ## Natcats Deployment of P2PPD  
 See [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/03-natcats-perpetual-distribution-upgrade.md) for information regarding the deployment of Perpetual Distribution for Natcats.  
 
