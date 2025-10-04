@@ -8,7 +8,7 @@ Natcats will be enabling [P2P Perpetual Distribution](https://github.com/evonbit
 
 ---
 
-## Supply & Allocation  
+## Overview of Update
 - Natcats are produced when the pattern 3b occurs in the hexadecimal representation of Bitcoin’s block difficulty data. This property is rare and has occurred only four times in Bitcoin’s history. Each occurrence produces 2,016 Natcats.
 - **Prior to the update**, new Natcats supply would become available via open mint, a process that is vulnerable to bot minting and allocation outside of the holder base. **As of the update**, each new Natcat will instead be allocated automatically to a specific Natcat holder.
 - Now, when a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats via lottery. The selected Natcat becomes the authorized parent for the new cat. 
