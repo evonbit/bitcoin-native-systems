@@ -10,15 +10,15 @@ Natcats will be enabling P2P Perpetual Distribution, a Bitcoin-native system dev
 - Natcats are produced when the pattern 3b occurs in the hexadecimal representation of Bitcoin’s block difficulty data. This property is rare and has occurred only four times in Bitcoin’s history. Each occurrence produces 2,016 Natcats.
 - **Prior to the update**, new Natcats supply would become available via open mint, a process that is vulnerable to bot minting and allocation outside of the holder base. **As of the update**, each new Natcat will instead be allocated automatically to a specific Natcat holder.
 - Now, when a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats via lottery. The selected Natcat becomes the authorized parent for the new cat. 
-- The holder of the authorized parent has exclusive rights to inscribe the new Natcat. All other attempts will be rejected by on-chain indexing and will not render.
+- The holder of the authorized parent has exclusive rights to inscribe the new Natcat. All other attempts will be rejected by P2PPD on-chain indexing and will not render.
 - New Natcats are added to the pool automatically, and become eligible to win Natcats on future blocks.
 - Mint rights do not expire, and transfer with a parent Natcat until utilized. 
-- The system is operated autonomously on-chain, without centralized dependencies.
+- The P2PPD system is operated autonomously on-chain, without centralized dependencies.
 
 ---
 
 ## Indexing  
-- An on-chain decentralized index updates automatically and in perpetuity as new Natcats are inscribed. 
+- The P2PPD on-chain index updates automatically and in perpetuity as new Natcats are inscribed. 
 - The index is published on-chain at:
   [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)  
 - For instructions on how to query the Natcats on-chain index and/or generate a local copy, see [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md) (*see “How to Query Index” section*).  
@@ -28,7 +28,7 @@ Natcats will be enabling P2P Perpetual Distribution, a Bitcoin-native system dev
 ---
 
 ## Minting  
-- New Natcats can be inscribed via inscription tools that provide full support for **Ordinals protocol v2.2.1 or later**.  
+- New Natcats can be inscribed via inscription tools that provide full support for **Ordinals v2.2.1 or later**.  
 - There is **no mint fee**, though platform service fees may apply.  
 - Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
 
