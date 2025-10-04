@@ -13,7 +13,7 @@ Natcats will be enabling P2P Perpetual Distribution, a Bitcoin-native system dev
 - The holder of the authorized parent has exclusive rights to inscribe the new Natcat. All other attempts will be rejected by P2PPD on-chain indexing and will not render.
 - New Natcats are added to the pool automatically, and become eligible to win Natcats on future blocks.
 - Mint rights do not expire, and transfer with a parent Natcat until utilized. 
-- The P2PPD system is operated autonomously on-chain, without centralized dependencies.
+- The system is operated autonomously on-chain, without centralized dependencies.
 
 ---
 
