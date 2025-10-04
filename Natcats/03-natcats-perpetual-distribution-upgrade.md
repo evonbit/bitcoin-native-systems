@@ -4,6 +4,8 @@ As of Bitcoin block **919296**, all future Natcats supply will be automatically 
 
 Natcats will be enabling P2P Perpetual Distribution, a Bitcoin-native system developed by @evonbit. The system operates autonomously on Ordinals, ensuring decentralized distribution of Bitcoin’s first natively generated art collection over the years to come.
 
+[Perpetual Distribution documentation](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md)
+
 ---
 
 ## Supply & Allocation  
