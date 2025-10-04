@@ -1,4 +1,4 @@
-# P2P Perpetual Distribution Upgrade  
+# P2P Perpetual Distribution Update  
 
 As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through an on-chain, decentralized distribution system.
 
