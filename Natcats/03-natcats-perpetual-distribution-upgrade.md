@@ -1,16 +1,15 @@
 # P2P Perpetual Distribution Upgrade  
 
-As of Bitcoin block 919296, all future Natcats supply will be automatically issued to Natcats holders through an on-chain, decentralized distribution system.
+As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through an on-chain, decentralized distribution system.
 
 Natcats will be enabling P2P Perpetual Distribution, a Bitcoin-native system developed by @evonbit. The system operates autonomously on Ordinals, ensuring decentralized distribution of Bitcoin’s first natively generated art collection over the years to come.
 
 ---
 
 ## Supply & Allocation  
-- Natcats are produced when the pattern 3b occurs in the hexadecimal representation of Bitcoin’s block difficulty data. This property is rare and has occurred only four times in Bitcoin’s history. Each occurrence produces **2,016 Natcats**.
+- Natcats are produced when the pattern 3b occurs in the hexadecimal representation of Bitcoin’s block difficulty data. This property is rare and has occurred only four times in Bitcoin’s history. Each occurrence produces 2,016 Natcats.
 - **Prior to the update**, new Natcats supply would become available via open mint, a process that is vulnerable to bot minting and allocation outside of the holder base. **As of the update**, each new Natcat will instead be allocated automatically to a specific Natcat holder.
-- Now, when a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats via lottery. The selected Natcat becomes the authorized parent for the new cat.
-- The holder of the authorized parent has exclusive rights to inscribe the new Natcat. All other attempts will be rejected by on-chain indexing and will not render.
+- Now, when a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats via lottery. The selected Natcat becomes the authorized parent for the new cat. The holder of the authorized parent has exclusive rights to inscribe the new Natcat. All other attempts will be rejected by on-chain indexing and will not render.
 - New Natcats are added to the pool automatically, and become eligible to win Natcats on future blocks.
 - Mint rights do not expire, and transfer with a parent Natcat until utilized. 
 - The system is operated autonomously on-chain, without centralized dependencies.
