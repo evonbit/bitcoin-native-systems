@@ -63,7 +63,7 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 ---
 
 ## Minting Instructions  
-To mint a new asset issued via Perpetual Distribution:  
+To inscribe a new asset issued via Perpetual Distribution:  
 
 1. **Check the authorized block winner**  
    - At **block height +4** (confirmation buffer), the lottery winner for an eligible Bitcoin block becomes available.  
@@ -111,7 +111,7 @@ To ensure the long-term issuance of collections such as Natcats (where supply ha
 ---
 
 ## Sample Deployment  
-The Perpetual Distribution deployment inscription for Natcats can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and routes to all Perpetual Distribution modules. 
+The Perpetual Distribution deployment inscription for Natcats can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and recursively calls all Perpetual Distribution modules on-chain. 
 
 
 ## Natcats Deployment of P2PPD  
