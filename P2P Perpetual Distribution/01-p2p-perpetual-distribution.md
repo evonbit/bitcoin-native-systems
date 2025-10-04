@@ -33,11 +33,10 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 **Purpose:** Selects an authorized minter for each new asset via on-chain lottery.  
 
 **Core Functions**  
-- Builds pool of assets in the collection that are eligible to win mint rights for a new asset (assets associated with lower block heights than the target asset).  
+- Builds pool of assets in the collection that are eligible to win mint rights for a new asset (assets associated with lower block heights than the target asset), starting with an initial seed index of one or more assets.  
 - Runs deterministic block-hash-derived lottery to randomly select one asset from the pool, which becomes the "authorized parent."  
 - Holder of the authorized parent has exclusive rights to mint the new asset, as a child of the authorized parent.  
 - New blocks are added to the pool as they are mined, and become eligible to win for later block heights.
-- *Note: Pool requires an initial seed index of one or more assets.* 
 
 ### On-chain Decentralized Indexer  
 **Purpose:** Maintains the on-chain index for a collection as new assets are inscribed.  
