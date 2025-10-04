@@ -99,7 +99,7 @@ To query the collection index and find the canonical ID for a given asset you ca
 ---
 
 ## Background: DMT UNAT  
-Perpetual Distribution builds on the **Digital Matter Theory Unique Non-Arbitrary Token standard**, pioneered by Natcats in February 2024. [Link](https://digital-matter-theory.gitbook.io/digital-matter-theory)  
+Perpetual Distribution builds on the ** [Digital Matter Theory](https://digital-matter-theory.gitbook.io/digital-matter-theory) Unique Non-Arbitrary Token (UNAT) standard**, pioneered by Natcats in February 2024.
 
 The UNAT standard introduced the concept of generative artwork with asset supply governed by emergent Bitcoin block data. P2P Perpetual Distribution builds on these foundations while addressing limitations regarding sustainable issuance of new supply:  
 
