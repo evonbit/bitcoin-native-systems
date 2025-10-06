@@ -6,6 +6,7 @@ Bitcoin-Native P2P Perpetual Distribution (“Perpetual Distribution”) is a mo
 The model uses Bitcoin block data as an immutable generative data input to:  
 **(A)** dynamically issue asset supply, one asset generated per eligible Bitcoin block, and  
 **(B)** allocate new assets within a P2P network as a form of decentralized yield.  
+**(C)** automatically index new assets as they are inscribed via an on-chain decentralized collection index. 
 
 Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-theory.gitbook.io/digital-matter-theory) (DMT) primitive, which wraps the DMT Unique Non-Arbitrary Token (UNAT) framework and its required indexing functionalities in a fully on-chain system that does not require third-party protocol support. This enables decentralized production of Bitcoin-issued assets in perpetuity.  
 
