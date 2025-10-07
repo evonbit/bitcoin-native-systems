@@ -63,6 +63,48 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 
 ---
 
+## System Diagram  
+
+```mermaid
+flowchart TD
+  %% --- Seed supply ---
+  subgraph Seed["Seed Supply"]
+    B1[Block 1] --> A1[Asset 1]
+    B2[Block 2] --> A2[Asset 2]
+  end
+
+  %% --- Perpetual distribution supply ---
+  subgraph Perpetual["Perpetual Distribution Supply"]
+    B3[Block 3] --> A3[Asset 3]
+    B4[Block 4] --> A4[Asset 4]
+    B5[Block 5] --> A5[Asset 5]
+  end
+
+  %% --- Lottery pools ---
+  A1 --> L3[asset 3 lottery pool]
+  A2 --> L3
+  L3 --> A3
+
+  A1 --> L4[asset 4 lottery pool]
+  A2 --> L4
+  A3 --> L4
+  L4 --> A4
+
+  A1 --> L5[asset 5 lottery pool<br/>(winner selected via block 5 hash)]
+  A2 --> L5
+  A3 --> L5
+  A4 --> L5
+  L5 --> A5
+
+  %% --- Annotation ---
+  note right of B5
+    asset produced when block 5 bits
+    contains "3b"
+  end note
+  ```
+
+---
+
 ## Minting Instructions  
 To inscribe a new asset issued via Perpetual Distribution:  
 
