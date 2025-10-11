@@ -54,19 +54,19 @@ Below are detailed breakdowns of each component and their respective on-chain fu
 
 ### Supply Engine
 
-**Validates Bitcoin blocks against supply conditions to authorize new supply.**
+**Issues supply based on Bitcoin block validation.**
 
-The on-chain supply validator validates Bitcoin blocks against collection-defined supply conditions ("patterns") to authorize new asset issuance. This enables dynamic, immutable, and perpetual asset generation as Bitcoin blocks are produced.
+The on-chain supply engine validates Bitcoin blocks against collection-defined supply conditions ("patterns") to authorize new asset issuance. This enables dynamic, immutable, and perpetual asset generation as Bitcoin blocks are produced.
 
-Supply conditions are defined in the deployment inscription (e.g., bits contains "3b"), and asset inscriptions route through it to validate against the validation engine. Each validated block authorizes the creation of one new asset within the collection.
+Supply conditions are defined in the deployment inscription (e.g., bits contains "3b"), and asset inscriptions route through it to validate against the supply engine. Each validated block authorizes the creation of one new asset within the collection.
 
-Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height +4.
+Validation occurs on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height +4.
 
 
 ### Allocation Engine
 **Determines which existing asset holder receives authorization to mint each asset.**
 
-The on-chain allocation system distributes mint rights for new asset supply as eligible Bitcoin blocks are produced. When a Bitcoin block generates a new asset, the block’s hash is used to deterministically select from a dynamic pool of all previously issued assets through an on-chain lottery.  
+The on-chain allocation engine distributes mint rights for new asset supply as eligible Bitcoin blocks are produced. When a Bitcoin block generates a new asset, the block’s hash is used to deterministically select from a dynamic pool of all previously issued assets through an on-chain lottery.  
 
 The selected asset becomes the **authorized parent** for the new asset, and only its holder is permitted to inscribe. Authorized parent validation is performed through a series of on-chain recursive calls, confirming that the inscribed asset is a direct child of the correct parent and the first valid child for that block height for that parent. Any other attempts are automatically rejected by the on-chain validator and excluded from indexing.  
 
