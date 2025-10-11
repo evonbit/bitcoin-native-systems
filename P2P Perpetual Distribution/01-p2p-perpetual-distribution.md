@@ -7,7 +7,7 @@ The model uses Bitcoin block data as an immutable generative data input to:
 
 - **(A)** dynamically issue asset supply, with one asset generated per eligible Bitcoin block  
 - **(B)** allocate new assets within a P2P network as a form of decentralized yield  
-- **(C)** automatically index new assets as they are inscribed via an on-chain decentralized collection index
+- **(C)** automatically index new assets as they are inscribed via an on-chain decentralized collection indexer
 
 
 Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-theory.gitbook.io/digital-matter-theory) (DMT) primitive that wraps the DMT Unique Non-Arbitrary Token (UNAT) framework and its required indexing functionalities in a fully on-chain system that does not require third-party protocol support. This enables decentralized production of Bitcoin-issued assets in perpetuity.
@@ -18,10 +18,9 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 
 ### On-chain Supply Validation
 
-### Purpose
-Determines asset supply based on emergent Bitcoin block data.
+_Determines asset supply based on emergent Bitcoin block data._
 
-### Description
+
 The on-chain supply validator processes Bitcoin blocks as they are mined, applying supply conditions ("patterns") defined for a collection to authorize the production of new supply. This model enables dynamic and perpetual asset generation as Bitcoin blocks are produced.
 
 Supply conditions for each collection are defined in its deployment inscription (e.g., bits contains "3b"), which references the on-chain validator to evaluate new blocks in real time. Once deployed, supply production is generative, immutable, and continues autonomously for as long as new Bitcoin blocks are produced.
@@ -30,7 +29,7 @@ Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/bl
 
 
 ### On-chain Allocation
-**Purpose:** Allocates mint rights for each new asset to a specific asset holder.
+_Allocates mint rights for each new asset to a specific asset holder._
 
 The on-chain allocation system distributes mint rights for new asset supply as eligible Bitcoin blocks are produced. When a Bitcoin block generates a new asset, the block’s hash is used to deterministically select from a dynamic pool of all previously issued assets through an on-chain lottery.  
 
@@ -39,7 +38,7 @@ The selected asset becomes the **authorized parent** for the new asset, and only
 As new supply is inscribed, it is added to the on-chain index, expanding the pool for subsequent lotteries. Newly issued assets immediately become eligible to win future blocks, ensuring continuous, decentralized allocation over time.
 
 ### On-chain Decentralized Indexing
-**Purpose:** Maintains the on-chain index for a collection as new assets are inscribed.
+_Maintains the on-chain index for a collection as new assets are inscribed._
 
 The on-chain indexing system continuously records and verifies all assets within a collection. Because new supply is issued dynamically and inscriptions can occur at any time, the indexer operates in a fully decentralized and self-updating manner. It maintains the canonical state of the collection directly on-chain, updating automatically and in perpetuity as new assets are created.  
 
@@ -51,7 +50,7 @@ Queries require a block height as input and can be executed individually through
 
 
 ### Deployment Inscription
-**Purpose:** Defines the generative art and supply logic for a collection, and serves as the access point for its on-chain index.
+_Defines the generative art and supply logic for a collection, and serves as the access point for its on-chain index._
 
 The deployment inscription establishes the foundational parameters and routing for a collection. It contains the art generation logic, supply conditions, and references to the on-chain modules responsible for validation, allocation, and indexing. Once deployed, it acts as the canonical access point for the collection’s on-chain state and index.  
 
@@ -62,11 +61,8 @@ It performs the following functions:
 - Provides on-chain access to the collection index.
 
 ## Asset Inscription
+_A unique asset produced by a specific Bitcoin block._
 
-### Purpose
-A unique asset produced by a specific Bitcoin block.
-
-### Description
 Each asset inscription self-validates against the on-chain index and renders natively in Ordinals explorers if it passes validation at runtime. The block number that produced the asset is encoded within the asset inscription’s undelegated content (see [Mint Instructions](#mint-instructions)). During validation, the asset inscription delegates to its deployment inscription, which handles routing and execution to relevant modules and subsystems, ensuring the asset remains deterministically linked to its originating block and verifiable against protocol-defined validation rules.
 
 
