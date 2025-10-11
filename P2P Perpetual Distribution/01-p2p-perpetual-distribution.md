@@ -74,7 +74,7 @@ As new supply is inscribed, it is added to the on-chain index, expanding the poo
 
 ### Decentralized Collection Indexing
 
-As new supply is inscribed, it is automatically added to an autonomous on-chain indexing system that maintains the canonical index of assets in perpetuity. The index is derived from the outputs of the supply validation and allocation modules and is accessible through the deployment inscription for each collection.
+As new supply is inscribed, it is automatically indexed by a decentralized on-chain collection index. This maintains the canonical index of assets in perpetuity. The index is derived from the outputs of the supply validation and allocation modules and is accessible through the deployment inscription for each collection.
 
 The index provides:
 - The canonical inscription ID for each Bitcoin block  
