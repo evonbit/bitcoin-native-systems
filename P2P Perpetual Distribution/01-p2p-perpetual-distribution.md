@@ -44,15 +44,26 @@ The Perpetual Distribution system consists of interconnected on-chain modules th
 - **Index Interface** – Maintains and exposes the canonical on-chain index for the collection, accessible via recursive endpoints.
 
 ### Architecture
+
 ```mermaid
 graph TD
-    A[Bitcoin Core] --> B[Supply Engine]
-    B --> C[Deployment Inscription]
-    C --> D[Allocation Engine]
-    D --> E[Asset Inscription]
-    E --> F[Parent Inscription]
-    E --> C
-    C --> G[Index Interface]
+    %% Core data layer
+    A[Bitcoin Core] -->|block data| B[Supply Engine]
+
+    %% Supply and validation logic
+    B -->|validates new blocks| C[Deployment Inscription]
+    C -->|references supply engine| B
+
+    %% Allocation and routing
+    C -->|routes authorization| D[Allocation Engine]
+    D -->|selects mint rights| E[Asset Inscription]
+    E -->|references| F[Parent Inscription]
+
+    %% Cross-links
+    E -->|delegates to| C
+    D -->|updates| G[Index Interface]
+    C -->|exposes index interface| G
+
 ```
 
 
