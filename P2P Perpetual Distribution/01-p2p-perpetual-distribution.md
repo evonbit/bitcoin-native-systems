@@ -27,27 +27,29 @@ Previous UNAT implementations included the following models and dependencies:
 - **Privileged-authorization UNAT mints** – A central authority issues supply. This model avoids bots successfully but introduces a centralized dependency. It is suitable for initial one-time distributions but cannot guarantee long-term issuance.  
 - **Third-party indexers** – Both models rely on external indexers to track supply over time, which also cannot guarantee ongoing operation long term.
 
-To ensure sustainable, autonomous issuance for collections such as **Natcats**, where supply may continue for decades, a system must support both decentralized issuance and balanced distribution controls.  
-**P2P Perpetual Distribution** satisfies these requirements.
+To ensure sustainable, autonomous issuance for collections such as **Natcats**, where supply may continue for decades, a system must support both decentralized issuance and balanced distribution controls.**P2P Perpetual Distribution** satisfies these requirements.
 
 ---
 
 
-## System Overview
 
 ## System Overview
 
 The Perpetual Distribution system consists of interconnected on-chain modules that autonomously generate, validate, and distribute new assets as Bitcoin blocks are mined.
 
-### Components
+### Components Summary
 
 - **Supply Engine** – Validates Bitcoin blocks against supply conditions to authorize new supply.  
 - **Allocation Engine** – Determines which existing asset holder receives authorization to mint the next asset.  
-- **Decentralized Collection Indexing** – Maintains the canonical on-chain record of all assets within a collection, updating automatically as new assets are issued.
+- **Decentralized Collection Indexing** – Maintains the canonical on-chain record of all assets within a collection, updating automatically as new assets are issued.  
 - **Deployment Inscription** – Defines the collection’s generative logic, supply parameters, and routes asset inscriptions to the supply and allocation engines.  
 - **Asset Inscription** – A unique non-fungible token asset produced by a specific Bitcoin block.  
 
+---
 
+## System Components
+
+Below are detailed breakdowns of each component and their respective on-chain functions.
 
 
 ### Supply Engine
