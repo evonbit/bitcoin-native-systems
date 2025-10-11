@@ -15,15 +15,18 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 ---
 
 
-## Background
-Perpetual Distribution builds on the **Digital Matter Theory Unique Non-Arbitrary Token (UNAT) standard**, pioneered by Natcats in February 2024.
+### Background: DMT UNAT
 
-The UNAT standard introduced the concept of generative artwork with supply and rarities governed by emergent Bitcoin block data. P2P Perpetual Distribution builds on these foundations while addressing limitations regarding sustainable issuance of new supply:
-- **Open UNAT mints** (first-come claims by Bitcoin block ID) were decentralized in principle but, in practice, proved vulnerable to bots and unbalanced allocation.
-- **Privileged authorization UNAT mints** (a central authority issues supply) avoid bots successfully but introduce a centralized dependency. This is suitable for initial one-time mint distribution but cannot guarantee issuance long-term.
-- In both cases, **third-party indexers** are required to track new supply issuance over time, which cannot guarantee long-term decentralized operation.
+Perpetual Distribution builds on the **Digital Matter Theory Unique Non-Arbitrary Token (UNAT)** standard, pioneered by **Natcats** in February 2024.
 
-To ensure the long-term issuance of collections such as Natcats (where supply has the potential to be produced autonomously over decades), it is necessary to support both **decentralized issuance** and **balanced distribution controls**. These requirements are met by P2P Perpetual Distribution.
+The UNAT standard introduced generative artwork whose supply and rarity are determined by emergent Bitcoin block data. **P2P Perpetual Distribution** extends these foundations to enable sustainable and autonomous issuance of new supply.
+
+Open UNAT mints — first-come claims by Bitcoin block ID — were decentralized in principle but proved vulnerable to bots and unbalanced distribution in practice.  
+Privileged-authorization UNAT mints — where a central authority issues supply — avoid bots successfully but introduce a centralized dependency. This approach is suitable for initial one-time distributions but cannot guarantee long-term issuance.  
+In both models, third-party indexers are required to track supply over time, which also cannot guarantee ongoing operation long term.
+
+To ensure sustainable, autonomous issuance for collections such as **Natcats**, where supply may continue for decades, a system must support both decentralized issuance and balanced distribution controls.  
+**P2P Perpetual Distribution** satisfies these requirements.
 
 ---
 
