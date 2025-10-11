@@ -14,10 +14,6 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 
 ---
 
-## Overview
-
----
-
 ## Architecture
 
 ### On-chain Supply Validation
