@@ -14,7 +14,74 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 
 ---
 
+
+## Background
+Perpetual Distribution builds on the **Digital Matter Theory Unique Non-Arbitrary Token (UNAT) standard**, pioneered by Natcats in February 2024.
+
+The UNAT standard introduced the concept of generative artwork with supply and rarities governed by emergent Bitcoin block data. P2P Perpetual Distribution builds on these foundations while addressing limitations regarding sustainable issuance of new supply:
+- **Open UNAT mints** (first-come claims by Bitcoin block ID) were decentralized in principle but, in practice, proved vulnerable to bots and unbalanced allocation.
+- **Privileged authorization UNAT mints** (a central authority issues supply) avoid bots successfully but introduce a centralized dependency. This is suitable for initial one-time mint distribution but cannot guarantee issuance long-term.
+- In both cases, **third-party indexers** are required to track new supply issuance over time, which cannot guarantee long-term decentralized operation.
+
+To ensure the long-term issuance of collections such as Natcats (where supply has the potential to be produced autonomously over decades), it is necessary to support both **decentralized issuance** and **balanced distribution controls**. These requirements are met by P2P Perpetual Distribution.
+
+---
+
+
 ## System Overview
+
+## System Overview
+
+The Perpetual Distribution system consists of interconnected on-chain modules that autonomously generate, validate, and distribute new assets as Bitcoin blocks are mined.
+
+### Components
+- **Bitcoin Core** – Provides immutable block data used as the generative input for the system.  
+- **Supply Engine** – Monitors new Bitcoin blocks and validates them against collection supply conditions.  
+- **Deployment Inscription** – Defines the collection’s generative logic, supply parameters, and routing to all other modules.  
+- **Allocation Engine** – Determines which existing asset holder receives authorization to mint the next asset.  
+- **Asset Inscription** – Represents a unique token produced by an eligible Bitcoin block and delegates validation to its deployment inscription.  
+- **Parent Inscription** – The previous asset that authorizes the mint of the next in sequence.  
+- **Index Interface** – Maintains and exposes the canonical on-chain index for the collection, accessible via recursive endpoints.
+
+### Architecture
+```mermaid
+graph TD
+    %% --- Bitcoin Layer ---
+    subgraph Bitcoin Network
+        A[Bitcoin Core]
+    end
+
+    %% --- Validation Layer ---
+    subgraph Validation Layer
+        B[Supply Engine]
+        C[Deployment Inscription]
+    end
+
+    %% --- Distribution Layer ---
+    subgraph Distribution Layer
+        D[Allocation Engine]
+        E[Asset Inscription]
+        F[Parent Inscription]
+    end
+
+    %% --- Index Layer ---
+    subgraph Index Layer
+        G[Index Interface]
+    end
+
+    %% --- Relationships ---
+    A -->|block data| B
+    B -->|validated blocks| C
+    C -->|references supply engine| B
+    C -->|routes authorization| D
+    D -->|selects mint rights| E
+    E -->|references| F
+    E -->|delegates to| C
+    D -->|updates| G
+    C -->|exposes index interface| G
+```
+
+
 
 ### On-chain Supply Validation
 
@@ -108,15 +175,6 @@ To query the collection index and find the canonical ID for a given asset, you c
 
 ---
 
-## Background: DMT UNAT
-Perpetual Distribution builds on the **Digital Matter Theory Unique Non-Arbitrary Token (UNAT) standard**, pioneered by Natcats in February 2024.
-
-The UNAT standard introduced the concept of generative artwork with asset supply governed by emergent Bitcoin block data. P2P Perpetual Distribution builds on these foundations while addressing limitations regarding sustainable issuance of new supply:
-- **Open UNAT mints** (first-come claims by Bitcoin block ID) were decentralized in principle but, in practice, proved vulnerable to bots and unbalanced allocation.
-- **Privileged authorization UNAT mints** (a central authority issues supply) avoid bots successfully but introduce a centralized dependency. This is suitable for initial one-time mint distribution but cannot guarantee issuance long-term.
-- In both cases, **third-party indexers** are required to track supply over time, which cannot guarantee long-term operation.
-
-To ensure the long-term issuance of collections such as Natcats (where supply has the potential to be produced autonomously over decades), it is necessary to support both **decentralized issuance** and **balanced distribution controls**. This is provided by P2P Perpetual Distribution.
 
 ---
 
