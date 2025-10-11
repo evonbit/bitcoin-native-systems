@@ -15,15 +15,17 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 ---
 
 
-### Background: DMT UNAT
+### Background
 
 Perpetual Distribution builds on the **Digital Matter Theory Unique Non-Arbitrary Token (UNAT)** standard, pioneered by **Natcats** in February 2024.
 
 The UNAT standard introduced generative artwork whose supply and rarity are determined by emergent Bitcoin block data. **P2P Perpetual Distribution** extends these foundations to enable sustainable and autonomous issuance of new supply.
 
-Open UNAT mints — first-come claims by Bitcoin block ID — were decentralized in principle but proved vulnerable to bots and unbalanced distribution in practice.  
-Privileged-authorization UNAT mints — where a central authority issues supply — avoid bots successfully but introduce a centralized dependency. This approach is suitable for initial one-time distributions but cannot guarantee long-term issuance.  
-In both models, third-party indexers are required to track supply over time, which also cannot guarantee ongoing operation long term.
+Previous UNAT implementations included the following models and dependencies:
+
+- **Open UNAT mints** – First-come claims by Bitcoin block ID. These were decentralized in principle but proved vulnerable to bots and unbalanced distribution in practice.  
+- **Privileged-authorization UNAT mints** – A central authority issues supply. This model avoids bots successfully but introduces a centralized dependency. It is suitable for initial one-time distributions but cannot guarantee long-term issuance.  
+- **Third-party indexers** – Both models rely on external indexers to track supply over time, which also cannot guarantee ongoing operation long term.
 
 To ensure sustainable, autonomous issuance for collections such as **Natcats**, where supply may continue for decades, a system must support both decentralized issuance and balanced distribution controls.  
 **P2P Perpetual Distribution** satisfies these requirements.
