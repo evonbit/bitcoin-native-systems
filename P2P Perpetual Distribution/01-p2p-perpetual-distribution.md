@@ -4,9 +4,11 @@
 Bitcoin-Native P2P Perpetual Distribution (“Perpetual Distribution”) is a model for the autonomous generation and distribution of non-fungible assets on Bitcoin Ordinals.
 
 The model uses Bitcoin block data as an immutable generative data input to:
-**(A)** dynamically issue asset supply, with one asset generated per eligible Bitcoin block,
-**(B)** allocate new assets within a P2P network as a form of decentralized yield, and
-**(C)** automatically index new assets as they are inscribed via an on-chain decentralized collection index.
+
+- **(A)** dynamically issue asset supply, with one asset generated per eligible Bitcoin block  
+- **(B)** allocate new assets within a P2P network as a form of decentralized yield  
+- **(C)** automatically index new assets as they are inscribed via an on-chain decentralized collection index
+
 
 Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-theory.gitbook.io/digital-matter-theory) (DMT) primitive that wraps the DMT Unique Non-Arbitrary Token (UNAT) framework and its required indexing functionalities in a fully on-chain system that does not require third-party protocol support. This enables decentralized production of Bitcoin-issued assets in perpetuity.
 
@@ -21,37 +23,32 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 ### On-chain Supply Validation
 **Purpose:** Determines asset supply based on emergent Bitcoin block data.
 
-Asset supply for new non-fungible tokens is issued based on the occurrence of patterns in Bitcoin block data, with the potential to produce new assets dynamically over time.
+The on-chain supply validation module issues new non-fungible tokens based on patterns in Bitcoin block data, enabling dynamic and perpetual asset generation. Supply conditions are defined in the deployment inscription (e.g., `bits contains "3b"`) for a collection, which references the on-chain validator to verify new blocks as they are mined.
 
-Supply conditions are defined for a collection deployment via the deployment inscription (e.g., `bits contains "3b"`). The deployment inscription references the on-chain supply validator and validates new blocks as they are mined. Validation is performed on-chain using Ordinals recursive endpoints `/r/blockinfo/<QUERY>`. The validator authorizes production of one asset in a collection per validated Bitcoin block.
+Validation occurs entirely on-chain via Ordinals recursive endpoints `/r/blockinfo/<QUERY>`. Each validated block authorizes the production of one new asset in the collection.
 
-Once deployed on-chain, supply production is both generative and immutable, operating as long as new Bitcoin blocks are mined.
+Once deployed, supply production is generative, immutable, and continues autonomously as long as Bitcoin blocks are produced. A finality buffer (e.g., 4 confirmations) mitigates reorg risk by ensuring that blocks are not validated until N+4. The validator operates within a shared on-chain module alongside the block-hash lottery.
 
-A finality buffer is enforced (e.g., 4 confirmations) to mitigate reorg risk prior to validation, meaning that new blocks will not be validated until N+4.
-
-The on-chain supply validator is deployed in a shared module with the on-chain block-hash lottery.
 
 ### On-chain Block Hash Lottery
 **Purpose:** Selects an authorized minter for each new asset via an on-chain lottery.
 
-Mint rights for each new asset are allocated automatically to holders of assets in a pool, with pool winners selected via a block-hash lottery. The pool is built dynamically for each new asset, including all assets produced from lower block heights than the target asset (starting with an initial seed index of one or more assets).
+The on-chain block-hash lottery allocates minting rights for each new asset to holders of existing assets within a dynamic pool. The pool expands automatically with each newly produced block, including all assets from lower block heights (beginning with an initial seed index of one or more assets).
 
-Runs a deterministic block-hash-derived lottery to randomly select one asset from the pool, which becomes the "authorized parent."
-- The holder of the authorized parent has exclusive rights to mint the new asset as a child of the authorized parent.
-- New blocks are added to the pool as they are mined and become eligible to win for later block heights.
+A deterministic, block-hash-derived lottery randomly selects one asset from the pool to serve as the **authorized parent**. The holder of this parent gains exclusive rights to mint the new asset as its child. As new blocks are mined, they are added to the pool and become eligible for selection in future lotteries.
+
 
 ### On-chain Decentralized Indexing
 **Purpose:** Maintains the on-chain index for a collection as new assets are inscribed.
 
-Because new asset supply is issued dynamically and inscriptions by holders can occur at any time, a decentralized and dynamic indexer is required to maintain the latest canonical index for all assets. This index is tracked on-chain and updates automatically and in perpetuity as new assets are inscribed.
+The on-chain decentralized index continuously records and verifies all assets within a collection. Because new supply is issued dynamically and inscriptions can occur at any time, the indexer must operate in a fully decentralized and self-updating manner. It maintains the canonical state of the collection directly on-chain, updating automatically and in perpetuity as new assets are created.
 
-The on-chain index is produced from the outputs of the supply and lottery logics and is accessible via the deployment inscription for a collection.
-
-The index returns:
+The index is generated from the outputs of the supply and lottery modules and is accessible through the deployment inscription for each collection. It returns:
 - The canonical inscription ID for each Bitcoin block (via query).
 - The results of the holder lottery for each Bitcoin block (via query).
 
-Queries require a block height as an input and can be made for individual blocks via the interface available on-chain, or queried in bulk using the batch scripts.
+Queries require a block height as input and can be executed individually via the on-chain interface or in bulk using provided batch scripts.
+
 
 ### Deployment Inscription
 **Purpose:** Deploy collection art and supply logics, and access the collection index.
@@ -66,6 +63,12 @@ The deployment inscription holds art generation logic and supply parameters for 
 **Purpose:** Unique asset produced by a specific Bitcoin block.
 
 Assets self-validate against the on-chain index and render natively in Ordinals explorers if they pass validation at runtime.
+
+---
+
+
+## Sample Deployment
+An example deployment inscription can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and recursively calls all other modules on-chain. 
 
 ---
 
@@ -115,9 +118,6 @@ The UNAT standard introduced the concept of generative artwork with asset supply
 To ensure the long-term issuance of collections such as Natcats (where supply has the potential to be produced autonomously over decades), it is necessary to support both **decentralized issuance** and **balanced distribution controls**. This is provided by P2P Perpetual Distribution.
 
 ---
-
-## Sample Deployment
-The Perpetual Distribution deployment inscription for Natcats can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and recursively calls all Perpetual Distribution modules on-chain.
 
 ## Natcats Deployment of P2PPD
 See [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/03-natcats-perpetual-distribution-upgrade.md) for information regarding the deployment of Perpetual Distribution for Natcats.
