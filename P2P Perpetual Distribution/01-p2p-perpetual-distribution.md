@@ -35,42 +35,19 @@ To ensure the long-term issuance of collections such as Natcats (where supply ha
 The Perpetual Distribution system consists of interconnected on-chain modules that autonomously generate, validate, and distribute new assets as Bitcoin blocks are mined.
 
 ### Components
-- **Bitcoin Core** – Provides immutable block data used as the generative input for the system.  
-- **Supply Engine** – Monitors new Bitcoin blocks and validates them against collection supply conditions.  
-- **Deployment Inscription** – Defines the collection’s generative logic, supply parameters, and routing to all other modules.  
+
+- **Supply Engine** – Validates Bitcoin blocks against supply conditions to authorize new supply.  
 - **Allocation Engine** – Determines which existing asset holder receives authorization to mint the next asset.  
-- **Asset Inscription** – Represents a unique token produced by an eligible Bitcoin block and delegates validation to its deployment inscription.  
-- **Parent Inscription** – The previous asset that authorizes the mint of the next in sequence.  
-- **Index Interface** – Maintains and exposes the canonical on-chain index for the collection, accessible via recursive endpoints.
-
-### Architecture
-
-```mermaid
-graph TD
-    %% Core data layer
-    A[Bitcoin Core] -->|block data| B[Supply Engine]
-
-    %% Supply and validation logic
-    B -->|validates new blocks| C[Deployment Inscription]
-    C -->|references supply engine| B
-
-    %% Allocation and routing
-    C -->|routes authorization| D[Allocation Engine]
-    D -->|selects mint rights| E[Asset Inscription]
-    E -->|references| F[Parent Inscription]
-
-    %% Cross-links
-    E -->|delegates to| C
-    D -->|updates| G[Index Interface]
-    C -->|exposes index interface| G
-
-```
+- **Decentralized Collection Indexing** – Maintains the canonical on-chain record of all assets within a collection, updating automatically as new assets are issued.
+- **Deployment Inscription** – Defines the collection’s generative logic, supply parameters, and routes asset inscriptions to the supply and allocation engines.  
+- **Asset Inscription** – A unique non-fungible token asset produced by a specific Bitcoin block.  
 
 
 
-### On-chain Supply Validation
 
-_Determines asset supply based on emergent Bitcoin block data._
+### Supply Engine
+
+**Validates Bitcoin blocks against supply conditions to authorize new supply.**
 
 
 The on-chain supply validator processes Bitcoin blocks as they are mined, applying supply conditions ("patterns") defined for a collection to authorize the production of new supply. This model enables dynamic and perpetual asset generation as Bitcoin blocks are produced.
@@ -80,8 +57,8 @@ Supply conditions for each collection are defined in its deployment inscription 
 Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). Each validated block authorizes the creation of one new asset within the collection. A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height + 4.
 
 
-### On-chain Allocation
-_Allocates mint rights for each new asset to a specific asset holder._
+### Allocation Engine
+**Determines which existing asset holder receives authorization to mint each asset.**
 
 The on-chain allocation system distributes mint rights for new asset supply as eligible Bitcoin blocks are produced. When a Bitcoin block generates a new asset, the block’s hash is used to deterministically select from a dynamic pool of all previously issued assets through an on-chain lottery.  
 
@@ -89,8 +66,9 @@ The selected asset becomes the **authorized parent** for the new asset, and only
 
 As new supply is inscribed, it is added to the on-chain index, expanding the pool for subsequent lotteries. Newly issued assets immediately become eligible to win future blocks, ensuring continuous, decentralized allocation over time.
 
-### On-chain Decentralized Indexing
-_Maintains the on-chain index for a collection as new assets are inscribed._
+
+### Decentralized Collection Indexing
+**Maintains the canonical on-chain record of all assets within a collection, updating automatically as new assets are issued.**
 
 The on-chain indexing system continuously records and verifies all assets within a collection. Because new supply is issued dynamically and inscriptions can occur at any time, the indexer operates in a fully decentralized and self-updating manner. It maintains the canonical state of the collection directly on-chain, updating automatically and in perpetuity as new assets are created.  
 
@@ -102,7 +80,7 @@ Queries require a block height as input and can be executed individually through
 
 
 ### Deployment Inscription
-_Defines the generative art and supply logic for a collection, and serves as the access point for its on-chain index._
+**Defines the collection’s generative logic, supply parameters, and routes asset inscriptions to the supply and allocation engines.**
 
 The deployment inscription establishes the foundational parameters and routing for a collection. It contains the art generation logic, supply conditions, and references to the on-chain modules responsible for validation, allocation, and indexing. Once deployed, it acts as the canonical access point for the collection’s on-chain state and index.  
 
@@ -111,6 +89,7 @@ It performs the following functions:
 - Sets collection supply conditions (e.g., `bits contains "3b"`).  
 - Routes asset inscriptions to the Supply Validation, Allocation, and Indexing modules.  
 - Provides on-chain access to the collection index.
+
 
 ## Asset Inscription
 _A unique asset produced by a specific Bitcoin block._
