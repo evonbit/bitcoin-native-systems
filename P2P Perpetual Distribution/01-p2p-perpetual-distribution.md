@@ -56,10 +56,14 @@ It performs the following functions:
 - Routes asset inscriptions to the Supply Validation, Allocation, and Indexing modules.  
 - Provides on-chain access to the collection index.
 
-### Asset Inscription
-**Purpose:** Unique asset produced by a specific Bitcoin block.
+## Asset Inscription
 
-Assets self-validate against the on-chain index and render natively in Ordinals explorers if they pass validation at runtime.
+### Purpose
+A unique asset produced by a specific Bitcoin block.
+
+### Description
+Each asset inscription self-validates against the on-chain index and renders natively in Ordinals explorers if it passes validation at runtime. The block number that produced the asset is encoded within the asset inscription’s undelegated content (see [Mint Instructions](#mint-instructions)). During validation, the asset inscription delegates to its deployment inscription, which handles routing and execution to relevant modules and subsystems, ensuring the asset remains deterministically linked to its originating block and verifiable against protocol-defined validation rules.
+
 
 ---
 
