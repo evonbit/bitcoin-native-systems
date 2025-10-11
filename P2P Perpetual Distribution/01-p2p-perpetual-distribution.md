@@ -95,9 +95,13 @@ It performs the following functions:
 
 
 
-## Asset Inscription
+### Asset Inscription
 
-Each asset inscription self-validates against the on-chain index and renders natively in Ordinals explorers if it passes validation at runtime. The block number that produced the asset is encoded within the asset inscription’s undelegated content (see [Mint Instructions](#mint-instructions)), and delegates to the collection deployment inscription.
+Each asset inscription self-validates against the on-chain index and renders natively in Ordinals explorers if it passes validation at runtime. 
+
+The block number that produced the asset is encoded within the asset inscription’s undelegated content (see [Mint Instructions](#mint-instructions)), and delegates to the collection deployment inscription.
+
+
 
 
 ---
