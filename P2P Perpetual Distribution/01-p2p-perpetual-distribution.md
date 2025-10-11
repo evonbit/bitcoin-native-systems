@@ -14,46 +14,47 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 
 ---
 
-## Architecture
+## System Overview
 
 ### On-chain Supply Validation
 **Purpose:** Determines asset supply based on emergent Bitcoin block data.
 
-The on-chain supply validation module issues new non-fungible tokens based on patterns in Bitcoin block data, enabling dynamic and perpetual asset generation. Supply conditions are defined in the deployment inscription (e.g., `bits contains "3b"`) for a collection, which references the on-chain validator to verify new blocks as they are mined.
+The on-chain supply validation system issues new non-fungible tokens based on patterns in Bitcoin block data, enabling dynamic and perpetual asset generation as new Bitcoin blocks are produced. Supply conditions for a collection are defined in the deployment inscription (e.g., `bits contains "3b"`), which references the on-chain validator to verify new blocks as they are mined. Once deployed, supply production is generative, immutable, and continues autonomously for as long as Bitcoin blocks are produced.  
 
-Validation occurs entirely on-chain via Ordinals recursive endpoints `/r/blockinfo/<QUERY>`. Each validated block authorizes the production of one new asset in the collection.
-
-Once deployed, supply production is generative, immutable, and continues autonomously as long as Bitcoin blocks are produced. A finality buffer (e.g., 4 confirmations) mitigates reorg risk by ensuring that blocks are not validated until N+4. The validator operates within a shared on-chain module alongside the block-hash lottery.
+Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). Each validated block authorizes the production of one new asset within the collection. A finality buffer (e.g., 4 confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height +4.
 
 
-### On-chain Block Hash Lottery
-**Purpose:** Selects an authorized minter for each new asset via an on-chain lottery.
+### On-chain Allocation
+**Purpose:** Allocates mint rights for each new asset to a specific asset holder.
 
-The on-chain block-hash lottery allocates minting rights for each new asset to holders of existing assets within a dynamic pool. The pool expands automatically with each newly produced block, including all assets from lower block heights (beginning with an initial seed index of one or more assets).
+The on-chain allocation system distributes mint rights for new asset supply as eligible Bitcoin blocks are produced. When a Bitcoin block generates a new asset, the block’s hash is used to deterministically select from a dynamic pool of all previously issued assets through an on-chain lottery.  
 
-A deterministic, block-hash-derived lottery randomly selects one asset from the pool to serve as the **authorized parent**. The holder of this parent gains exclusive rights to mint the new asset as its child. As new blocks are mined, they are added to the pool and become eligible for selection in future lotteries.
+The selected asset becomes the **authorized parent** for the new asset, and only its holder is permitted to inscribe. Authorized parent validation is performed through a series of on-chain recursive calls, confirming that the inscribed asset is a direct child of the correct parent and the first valid child for that block for that parent. Any other attempts are automatically rejected by the on-chain validator and excluded from indexing.  
 
+As new supply is inscribed, it is added to the on-chain index, expanding the pool for subsequent lotteries. Newly issued assets immediately become eligible to win future blocks, ensuring continuous, decentralized allocation over time.
 
 ### On-chain Decentralized Indexing
 **Purpose:** Maintains the on-chain index for a collection as new assets are inscribed.
 
-The on-chain decentralized index continuously records and verifies all assets within a collection. Because new supply is issued dynamically and inscriptions can occur at any time, the indexer must operate in a fully decentralized and self-updating manner. It maintains the canonical state of the collection directly on-chain, updating automatically and in perpetuity as new assets are created.
+The on-chain indexing system continuously records and verifies all assets within a collection. Because new supply is issued dynamically and inscriptions can occur at any time, the indexer operates in a fully decentralized and self-updating manner. It maintains the canonical state of the collection directly on-chain, updating automatically and in perpetuity as new assets are created.  
 
-The index is generated from the outputs of the supply and lottery modules and is accessible through the deployment inscription for each collection. It returns:
-- The canonical inscription ID for each Bitcoin block (via query).
-- The results of the holder lottery for each Bitcoin block (via query).
+The index is generated from the outputs of the supply validation and allocation modules and is accessible through the deployment inscription for each collection. It returns:  
+- The canonical inscription ID for each Bitcoin block.  
+- The results of the holder lottery for each Bitcoin block.  
 
-Queries require a block height as input and can be executed individually via the on-chain interface or in bulk using provided batch scripts.
+Queries require a block height as input and can be executed individually through the on-chain interface or in bulk using the provided batch scripts.
 
 
 ### Deployment Inscription
-**Purpose:** Deploy collection art and supply logics, and access the collection index.
+**Purpose:** Defines the generative art and supply logic for a collection, and serves as the access point for its on-chain index.
 
-The deployment inscription holds art generation logic and supply parameters for a collection, and provides on-chain access to the collection index.
-- Sets parameters for art generated using Bitcoin block data as a generative seed.
-- Sets collection supply parameters (e.g., `bits contains "3b"`).
-- Routes asset inscriptions to Supply Validator, Block Hash Lottery, and Indexing logics.
-- Provides access to the on-chain collection index.
+The deployment inscription establishes the foundational parameters and routing for a collection. It contains the art generation logic, supply conditions, and references to the on-chain modules responsible for validation, allocation, and indexing. Once deployed, it acts as the canonical access point for the collection’s on-chain state and index.  
+
+It performs the following functions:  
+- Defines parameters for art generation using Bitcoin block data as a generative seed.  
+- Sets collection supply conditions (e.g., `bits contains "3b"`).  
+- Routes asset inscriptions to the Supply Validation, Allocation, and Indexing modules.  
+- Provides on-chain access to the collection index.
 
 ### Asset Inscription
 **Purpose:** Unique asset produced by a specific Bitcoin block.
@@ -61,7 +62,6 @@ The deployment inscription holds art generation logic and supply parameters for 
 Assets self-validate against the on-chain index and render natively in Ordinals explorers if they pass validation at runtime.
 
 ---
-
 
 ## Sample Deployment
 An example deployment inscription can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and recursively calls all other modules on-chain. 
