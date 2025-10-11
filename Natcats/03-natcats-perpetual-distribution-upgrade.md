@@ -1,42 +1,40 @@
-# P2P Perpetual Distribution Update  
+# P2P Perpetual Distribution Update
 
-As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through an on-chain, decentralized distribution system.
+As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through a **decentralized on-chain distribution system**.
 
-Natcats will be enabling [P2P Perpetual Distribution](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md), a Bitcoin-native system developed by @evonbit. The system operates autonomously on Ordinals, ensuring decentralized distribution of Bitcoin’s first natively generated art collection over the years to come.
-
+Natcats will enable **[P2P Perpetual Distribution](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md)** (P2PPD), a Bitcoin-native distribution model developed by **@evonbit**. P2PPD runs autonomously on Bitcoin Ordinals and in perpetuity—**without reliance on third-party indexers or authorities**—securing decentralized distribution of Bitcoin’s first natively generated art collection.
 
 ---
 
 ## Allocation
-- Natcats are produced when the pattern 3b occurs in the hexadecimal representation of Bitcoin’s block difficulty data. This property is rare and has occurred only four times in Bitcoin’s history. Each occurrence produces 2,016 Natcats.
-- **Prior to the update**, new Natcats supply would become available via open mint, a process that is vulnerable to bot minting and allocation outside of the holder base. **As of the update**, each new Natcat will instead be allocated automatically to a specific Natcat holder.
-- Now, when a Bitcoin block produces a Natcat, the block’s hash is used as a deterministic seed to randomly select from a pool of all prior Natcats via lottery. The selected Natcat becomes the authorized parent for the new cat. 
-- The holder of the authorized parent has exclusive rights to inscribe the new Natcat. All other attempts will be rejected by P2PPD on-chain indexing and will not render.
-- New Natcats are added to the pool automatically, and become eligible to win Natcats on future blocks.
-- Mint rights do not expire, and transfer with a parent Natcat until utilized. 
-- The system is operated autonomously on-chain, without centralized dependencies.
+- Natcats are produced when the pattern **3b** occurs in the hexadecimal representation of Bitcoin’s block difficulty data. This property is rare and has occurred only **four** times in Bitcoin’s history. **Each occurrence produces 2,016 Natcats.**
+- **Before the update**, new Natcats were available via open mint—a process vulnerable to bot minting and allocation outside of the holder base. **As of block 919296**, mint rights for new supply are **automatically allocated on-chain to existing holders** as the Bitcoin network produces new Natcats.
+- When a Bitcoin block produces a new Natcat, the **block hash** is used as a **deterministic seed** to run an on-chain lottery across the pool of all prior Natcats. The selected Natcat becomes the **authorized parent** for the new cat.
+- The **holder of the authorized parent** has exclusive rights to inscribe the new Natcat; all other attempts are **rejected by P2PPD’s on-chain indexing** and will not render.
+- **Each Natcat has an equal chance** of being selected in the lottery; holding more Natcats **increases odds proportionally**.
+- Newly inscribed Natcats are **automatically added to the pool** and become eligible to win future blocks immediately.
+- **Mint rights do not expire, and transfer with a parent Natcat until utilized.**
+- The system operates **fully on-chain**, eliminating bot minting and ensuring distribution remains within the holder base—**without centralized dependencies**.
 
 ---
 
-## Indexing  
-- The P2PPD on-chain index updates automatically and in perpetuity as new Natcats are inscribed. 
+## Indexing
+- The P2PPD on-chain index updates automatically and in perpetuity as new Natcats are inscribed.
 - The index is published on-chain at:
   [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)  
 - For instructions on how to query the Natcats on-chain index and/or generate a local copy, see [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md) (*see “How to Query Index” section*).  
 - The on chain index serves as the authorative index moving forward, and functions as a hard fork of the previous Natcats index. The prior **TAP Protocol index** is valid up to block **919295**, and above this block is not authorative.
 
-
 ---
 
-## Minting  
+## Minting
 - New Natcats can be inscribed via inscription tools that provide full support for delegation and parent/child. 
 - There is **no mint fee**, though platform service fees may apply.  
 - Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
 
-
 ---
 
-## Rendering  
+## Rendering
 - **Generations 5+** render natively in Ordinals explorers by default once inscribed.  
 - **Generations 1–4** render via the preexisting UNAT pathway (requires UNAT specific wallet support), but can optionally be **reinscribed** to enable native rendering.  
 - Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity. Instructions can be found at [COMING SOON] 
@@ -48,10 +46,10 @@ Examples
 
 ---
 
-## Treasury  
+## Treasury
 - Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, to enable a combination of long term holding, partnerships, sales, and acquisitions in support of the project’s legacy.  
 
 ---
 
-## Holder Action  
-- **No action is required** from holders.  
+## Holder Action
+- **No action is required** from holders.
