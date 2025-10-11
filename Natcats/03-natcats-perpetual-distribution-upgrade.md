@@ -23,13 +23,13 @@ Natcats will be enabling [P2P Perpetual Distribution](https://github.com/evonbit
 - The index is published on-chain at:
   [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)  
 - For instructions on how to query the Natcats on-chain index and/or generate a local copy, see [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md) (*see “How to Query Index” section*).  
-- The on chain index serves as the authorative index moving forward. The prior **TAP Protocol index** is valid up to block **919295**, and above this block is not authorative.
+- The on chain index serves as the authorative index moving forward, and functions as a hard fork of the previous Natcats index. The prior **TAP Protocol index** is valid up to block **919295**, and above this block is not authorative.
 
 
 ---
 
 ## Minting  
-- New Natcats can be inscribed via inscription tools that provide full support for **Ordinals v2.2.1 or later**.  
+- New Natcats can be inscribed via inscription tools that provide full support for delegation and parent/child. 
 - There is **no mint fee**, though platform service fees may apply.  
 - Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
 
