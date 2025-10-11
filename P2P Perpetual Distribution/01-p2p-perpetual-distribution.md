@@ -27,7 +27,7 @@ Previous UNAT implementations included the following models and dependencies:
 - **Privileged-authorization UNAT mints** – A central authority issues supply. This model avoids bots successfully but introduces a centralized dependency. It is suitable for initial one-time distributions but cannot guarantee long-term issuance.  
 - **Third-party indexers** – Both models rely on external indexers to track supply over time, which also cannot guarantee ongoing operation long term.
 
-To ensure sustainable, autonomous issuance for collections such as **Natcats**, where supply may continue for decades, a system must support both decentralized issuance and balanced distribution controls.**P2P Perpetual Distribution** satisfies these requirements.
+To ensure sustainable, autonomous issuance for collections such as **Natcats**, where supply may continue for decades, a system must support both decentralized issuance and balanced distribution controls. **P2P Perpetual Distribution** satisfies these requirements.
 
 ---
 
@@ -56,9 +56,9 @@ Below are detailed breakdowns of each component and their respective on-chain fu
 
 **Validates Bitcoin blocks against supply conditions to authorize new supply.**
 
-The on-chain supply validator checks each newly mined Bitcoin block against collection-defined supply conditions ("patterns") to authorize new asset issuance. This enables dynamic, immutable, and perpetual asset generation as Bitcoin blocks are produced.
+The on-chain supply validator validates Bitcoin blocks against collection-defined supply conditions ("patterns") to authorize new asset issuance. This enables dynamic, immutable, and perpetual asset generation as Bitcoin blocks are produced.
 
-Supply conditions are defined in the deployment inscription (e.g., bits contains "3b"), and asset inscriptions route through it to validate against the on-chain validator. Each validated block authorizes the creation of one new asset within the collection.
+Supply conditions are defined in the deployment inscription (e.g., bits contains "3b"), and asset inscriptions route through it to validate against the validation engine. Each validated block authorizes the creation of one new asset within the collection.
 
 Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height +4.
 
