@@ -107,7 +107,10 @@ The block number that produced the asset is encoded within the asset inscription
 ---
 
 ## Sample Deployment
-An example deployment inscription can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and recursively calls the supply and allocation engines. 
+An sample deployment inscription (Natcats) can be found at [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) 
+
+This inscription recursively calls the supply and allocation engines.
+
 
 ---
 
