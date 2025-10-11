@@ -16,7 +16,7 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 
 ## System Overview
 
-## On-chain Supply Validation
+### On-chain Supply Validation
 
 ### Purpose
 Determines asset supply based on emergent Bitcoin block data.
