@@ -1,20 +1,25 @@
 # P2P Perpetual Distribution Update
 
-As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through a **decentralized on-chain distribution system**.
+As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through a **decentralized on-chain distribution system**.  
 
-Natcats will enable **[P2P Perpetual Distribution](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md)** (P2PPD), a Bitcoin-native distribution model developed by **@evonbit**. P2PPD runs autonomously on Bitcoin Ordinals and in perpetuity—**without reliance on third-party indexers or authorities**—securing decentralized distribution of Bitcoin’s first natively generated art collection.
+Natcats will enable **P2P Perpetual Distribution**, a Bitcoin-native distribution model developed by **@evonbit**.  
+P2P Perpetual Distribution (P2PPD) automatically allocates mint rights for new Natcats supply among holders as it is produced by the Bitcoin Blockchain.  
+
+The system operates **autonomously on Bitcoin Ordinals** and in perpetuity—**without dependencies on third-party indexers or authorities**.  
 
 ---
 
 ## Allocation
-- Natcats are produced when the pattern **3b** occurs in the hexadecimal representation of Bitcoin’s block difficulty data. This property is rare and has occurred only **four** times in Bitcoin’s history. **Each occurrence produces 2,016 Natcats.**
-- **Before the update**, new Natcats were available via open mint—a process vulnerable to bot minting and allocation outside of the holder base. **As of block 919296**, mint rights for new supply are **automatically allocated on-chain to existing holders** as the Bitcoin network produces new Natcats.
-- When a Bitcoin block produces a new Natcat, the **block hash** is used as a **deterministic seed** to run an on-chain lottery across the pool of all prior Natcats. The selected Natcat becomes the **authorized parent** for the new cat.
-- The **holder of the authorized parent** has exclusive rights to inscribe the new Natcat; all other attempts are **rejected by P2PPD’s on-chain indexing** and will not render.
-- **Each Natcat has an equal chance** of being selected in the lottery; holding more Natcats **increases odds proportionally**.
-- Newly inscribed Natcats are **automatically added to the pool** and become eligible to win future blocks immediately.
-- **Mint rights do not expire, and transfer with a parent Natcat until utilized.**
-- The system operates **fully on-chain**, eliminating bot minting and ensuring distribution remains within the holder base—**without centralized dependencies**.
+- Natcats are produced when the pattern **3b** occurs in the hexadecimal representation of Bitcoin’s block difficulty data — a rare event that has occurred only **four** times in Bitcoin’s history. Each occurrence produces **2,016 Natcats**.  
+- When a Bitcoin block produces a new Natcat, the **block hash** is used to **select from a pool of all prior Natcats via an on-chain lottery**.  
+- The selected Natcat becomes the **authorized parent** for the new cat.  
+- Only the **holder of the authorized parent** can inscribe the new Natcat; all other inscription attempts are **rejected from indexing and will not render**, enforced by the on-chain system.  
+- As new supply is inscribed, it is **automatically added to the on-chain index**, which operates in perpetuity.  
+- Newly inscribed Natcats are **immediately added to the pool** and become eligible to win future Natcats blocks.  
+- Each Natcat held has an **equal chance** of winning new supply, and a holder’s chances increase **proportionally** as more Natcats are owned.  
+- This model eliminates all risk of **bot minting** and ensures new supply remains **within the holder base**.  
+- **Mint rights do not expire, and transfer with a parent Natcat until utilized.**  
+- The system operates **fully on-chain**, self-sustaining and **without centralized dependencies**.  
 
 ---
 
@@ -23,7 +28,7 @@ Natcats will enable **[P2P Perpetual Distribution](https://github.com/evonbit/bi
 - The index is published on-chain at:
   [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)  
 - For instructions on how to query the Natcats on-chain index and/or generate a local copy, see [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md) (*see “How to Query Index” section*).  
-- The on chain index serves as the authorative index moving forward, and functions as a hard fork of the previous Natcats index. The prior **TAP Protocol index** is valid up to block **919295**, and above this block is not authorative.
+- The on-chain index serves as the authoritative index moving forward, and functions as a hard fork of the previous Natcats index. The prior **TAP Protocol index** is valid up to block **919295**, and above this block is not authoritative.
 
 ---
 
