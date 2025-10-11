@@ -54,7 +54,6 @@ Below are detailed breakdowns of each component and their respective on-chain fu
 
 ### Supply Engine
 
-**Issues supply based on Bitcoin block validation.**
 
 The on-chain supply engine validates Bitcoin blocks against collection-defined supply conditions ("patterns") to authorize new asset issuance. This enables dynamic, immutable, and perpetual asset generation as Bitcoin blocks are produced.
 
@@ -64,7 +63,7 @@ Validation occurs on-chain through Ordinals recursive endpoints (`/r/blockinfo/<
 
 
 ### Allocation Engine
-**Determines which existing asset holder receives authorization to mint each asset.**
+
 
 The on-chain allocation engine distributes mint rights for new asset supply as eligible Bitcoin blocks are produced. When a Bitcoin block generates a new asset, the block’s hash is used to deterministically select from a dynamic pool of all previously issued assets through an on-chain lottery.  
 
@@ -75,9 +74,7 @@ As new supply is inscribed, it is added to the on-chain index, expanding the poo
 
 ### Decentralized Collection Indexing
 
-**Maintains the canonical on-chain record of all assets within a collection, updating automatically as new assets are issued.**
-
-As new supply is inscribed, it is automatically added to an autonomous on-chain indexing system that maintains the canonical state of the collection in perpetuity. The index is derived from the outputs of the supply validation and allocation modules and is accessible through the deployment inscription for each collection.
+As new supply is inscribed, it is automatically added to an autonomous on-chain indexing system that maintains the canonical index of assets in perpetuity. The index is derived from the outputs of the supply validation and allocation modules and is accessible through the deployment inscription for each collection.
 
 The index provides:
 - The canonical inscription ID for each Bitcoin block  
@@ -87,8 +84,6 @@ Queries require a block height as input and can be executed directly through the
 
 
 ### Deployment Inscription
-
-**Defines the collection’s generative logic, supply parameters, and routing to other on-chain modules.**
 
 The deployment inscription contains the foundational parameters and logic for a collection, including art generation, supply conditions, and references to the on-chain modules responsible for validation, allocation, and indexing. Once deployed, it serves as the canonical access point for the collection’s on-chain state and index.
 
@@ -101,7 +96,6 @@ It performs the following functions:
 
 
 ## Asset Inscription
-_A unique asset produced by a specific Bitcoin block._
 
 Each asset inscription self-validates against the on-chain index and renders natively in Ordinals explorers if it passes validation at runtime. The block number that produced the asset is encoded within the asset inscription’s undelegated content (see [Mint Instructions](#mint-instructions)). During validation, the asset inscription delegates to its deployment inscription, which handles routing and execution to relevant modules and subsystems, ensuring the asset remains deterministically linked to its originating block and verifiable against protocol-defined validation rules.
 
