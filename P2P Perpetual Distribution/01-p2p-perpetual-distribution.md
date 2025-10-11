@@ -43,7 +43,7 @@ The Perpetual Distribution system consists of interconnected on-chain modules th
 - **Allocation Engine** – Determines which existing asset holder receives authorization to mint the next asset.  
 - **Decentralized Collection Indexing** – Maintains the canonical on-chain record of all assets within a collection, updating automatically as new assets are issued.  
 - **Deployment Inscription** – Defines the collection’s generative logic, supply parameters, and routes asset inscriptions to the supply and allocation engines.  
-- **Asset Inscription** – A unique non-fungible token asset produced by a specific Bitcoin block.  
+- **Asset Inscription** – A unique non-fungible token asset associated with a specific Bitcoin block.  
 
 ---
 
@@ -56,12 +56,11 @@ Below are detailed breakdowns of each component and their respective on-chain fu
 
 **Validates Bitcoin blocks against supply conditions to authorize new supply.**
 
+The on-chain supply validator checks each newly mined Bitcoin block against collection-defined supply conditions ("patterns") to authorize new asset issuance. This enables dynamic, immutable, and perpetual asset generation as Bitcoin blocks are produced.
 
-The on-chain supply validator processes Bitcoin blocks as they are mined, applying supply conditions ("patterns") defined for a collection to authorize the production of new supply. This model enables dynamic and perpetual asset generation as Bitcoin blocks are produced.
+Supply conditions are defined in the deployment inscription (e.g., bits contains "3b"), and asset inscriptions route through it to validate against the on-chain validator. Each validated block authorizes the creation of one new asset within the collection.
 
-Supply conditions for each collection are defined in its deployment inscription (e.g., bits contains "3b"), which references the on-chain validator to evaluate new blocks in real time. Once deployed, supply production is generative, immutable, and continues autonomously for as long as new Bitcoin blocks are produced.
-
-Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). Each validated block authorizes the creation of one new asset within the collection. A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height + 4.
+Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height +4.
 
 
 ### Allocation Engine
@@ -69,33 +68,36 @@ Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/bl
 
 The on-chain allocation system distributes mint rights for new asset supply as eligible Bitcoin blocks are produced. When a Bitcoin block generates a new asset, the block’s hash is used to deterministically select from a dynamic pool of all previously issued assets through an on-chain lottery.  
 
-The selected asset becomes the **authorized parent** for the new asset, and only its holder is permitted to inscribe. Authorized parent validation is performed through a series of on-chain recursive calls, confirming that the inscribed asset is a direct child of the correct parent and the first valid child for that block for that parent. Any other attempts are automatically rejected by the on-chain validator and excluded from indexing.  
+The selected asset becomes the **authorized parent** for the new asset, and only its holder is permitted to inscribe. Authorized parent validation is performed through a series of on-chain recursive calls, confirming that the inscribed asset is a direct child of the correct parent and the first valid child for that block height for that parent. Any other attempts are automatically rejected by the on-chain validator and excluded from indexing.  
 
-As new supply is inscribed, it is added to the on-chain index, expanding the pool for subsequent lotteries. Newly issued assets immediately become eligible to win future blocks, ensuring continuous, decentralized allocation over time.
+As new supply is inscribed, it is added to the on-chain index, expanding the pool for subsequent lotteries. Newly issued assets immediately become eligible to win future blocks.
 
 
 ### Decentralized Collection Indexing
+
 **Maintains the canonical on-chain record of all assets within a collection, updating automatically as new assets are issued.**
 
-The on-chain indexing system continuously records and verifies all assets within a collection. Because new supply is issued dynamically and inscriptions can occur at any time, the indexer operates in a fully decentralized and self-updating manner. It maintains the canonical state of the collection directly on-chain, updating automatically and in perpetuity as new assets are created.  
+As new supply is inscribed, it is automatically added to an autonomous on-chain indexing system that maintains the canonical state of the collection in perpetuity. The index is derived from the outputs of the supply validation and allocation modules and is accessible through the deployment inscription for each collection.
 
-The index is generated from the outputs of the supply validation and allocation modules and is accessible through the deployment inscription for each collection. It returns:  
-- The canonical inscription ID for each Bitcoin block.  
-- The results of the holder lottery for each Bitcoin block.  
+The index provides:
+- The canonical inscription ID for each Bitcoin block  
+- The authorized parent and holder lottery results for each block  
 
-Queries require a block height as input and can be executed individually through the on-chain interface or in bulk using the provided batch scripts.
+Queries require a block height as input and can be executed directly through the on-chain interface or in batch using the provided scripts.
 
 
 ### Deployment Inscription
-**Defines the collection’s generative logic, supply parameters, and routes asset inscriptions to the supply and allocation engines.**
 
-The deployment inscription establishes the foundational parameters and routing for a collection. It contains the art generation logic, supply conditions, and references to the on-chain modules responsible for validation, allocation, and indexing. Once deployed, it acts as the canonical access point for the collection’s on-chain state and index.  
+**Defines the collection’s generative logic, supply parameters, and routing to other on-chain modules.**
 
-It performs the following functions:  
-- Defines parameters for art generation using Bitcoin block data as a generative seed.  
-- Sets collection supply conditions (e.g., `bits contains "3b"`).  
-- Routes asset inscriptions to the Supply Validation, Allocation, and Indexing modules.  
-- Provides on-chain access to the collection index.
+The deployment inscription contains the foundational parameters and logic for a collection, including art generation, supply conditions, and references to the on-chain modules responsible for validation, allocation, and indexing. Once deployed, it serves as the canonical access point for the collection’s on-chain state and index.
+
+It performs the following functions:
+- Defines parameters for art generation using Bitcoin block data as a generative seed  
+- Sets collection supply conditions (e.g., `bits contains "3b"`)  
+- Routes asset inscriptions to the Supply Validation, Allocation, and Indexing modules  
+- Provides on-chain access to the collection index
+
 
 
 ## Asset Inscription
@@ -107,7 +109,7 @@ Each asset inscription self-validates against the on-chain index and renders nat
 ---
 
 ## Sample Deployment
-An example deployment inscription can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and recursively calls all other modules on-chain. 
+An example deployment inscription can be found here [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0) and recursively calls the supply and allocation engines. 
 
 ---
 
@@ -143,8 +145,6 @@ To inscribe a new asset issued via Perpetual Distribution:
 To query the collection index and find the canonical ID for a given asset, you can either:
 - Query for a Bitcoin block number via the deployment inscription in Ordinals explorer using the *Index* input field. This will produce the ID for its associated asset.
 - Run the [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/index-script.py) to construct a local index of assets associated with all blocks or a specified range.
-
----
 
 
 ---
