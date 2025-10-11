@@ -22,9 +22,11 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 Determines asset supply based on emergent Bitcoin block data.
 
 ### Description
-The on-chain supply validation system issues new non-fungible tokens based on patterns in Bitcoin block data, enabling dynamic and perpetual asset generation as Bitcoin blocks are produced. Supply conditions for a collection are defined in the deployment inscription (e.g., bits contains "3b"), which references the on-chain validator to verify new blocks as they are mined. Once deployed, supply production is generative, immutable, and continues autonomously for as long as new Bitcoin blocks are produced.
+The on-chain supply validator processes Bitcoin blocks as they are mined, applying supply conditions ("patterns") defined for a collection to authorize the production of new supply. This model enables dynamic and perpetual asset generation as Bitcoin blocks are produced.
 
-Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). Each validated block authorizes the production of one new asset within the collection. A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height +4.
+Supply conditions for each collection are defined in its deployment inscription (e.g., bits contains "3b"), which references the on-chain validator to evaluate new blocks in real time. Once deployed, supply production is generative, immutable, and continues autonomously for as long as new Bitcoin blocks are produced.
+
+Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). Each validated block authorizes the creation of one new asset within the collection. A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height + 4.
 
 
 ### On-chain Allocation
