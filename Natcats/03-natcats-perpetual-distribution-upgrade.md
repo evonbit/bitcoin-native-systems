@@ -6,6 +6,7 @@ Natcats will enable **P2P Perpetual Distribution**, a Bitcoin-native distributio
 P2P Perpetual Distribution (P2PPD) automatically allocates mint rights for new Natcats supply among holders as it is produced by the Bitcoin Blockchain.  
 
 The system operates **autonomously on Bitcoin Ordinals** and in perpetuity—**without dependencies on third-party indexers or authorities**.  
+This represents the first fully decentralized implementation of autonomous asset production on the Bitcoin Blockchain and ensures the long-term integrity of Bitcoin’s first natively generated art collection.
 
 ---
 
