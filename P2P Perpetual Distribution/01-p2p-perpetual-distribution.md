@@ -46,39 +46,13 @@ The Perpetual Distribution system consists of interconnected on-chain modules th
 ### Architecture
 ```mermaid
 graph TD
-    %% --- Bitcoin Layer ---
-    subgraph Bitcoin Network
-        A[Bitcoin Core]
-    end
-
-    %% --- Validation Layer ---
-    subgraph Validation Layer
-        B[Supply Engine]
-        C[Deployment Inscription]
-    end
-
-    %% --- Distribution Layer ---
-    subgraph Distribution Layer
-        D[Allocation Engine]
-        E[Asset Inscription]
-        F[Parent Inscription]
-    end
-
-    %% --- Index Layer ---
-    subgraph Index Layer
-        G[Index Interface]
-    end
-
-    %% --- Relationships ---
-    A -->|block data| B
-    B -->|validated blocks| C
-    C -->|references supply engine| B
-    C -->|routes authorization| D
-    D -->|selects mint rights| E
-    E -->|references| F
-    E -->|delegates to| C
-    D -->|updates| G
-    C -->|exposes index interface| G
+    A[Bitcoin Core] --> B[Supply Engine]
+    B --> C[Deployment Inscription]
+    C --> D[Allocation Engine]
+    D --> E[Asset Inscription]
+    E --> F[Parent Inscription]
+    E --> C
+    C --> G[Index Interface]
 ```
 
 
