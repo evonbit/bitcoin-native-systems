@@ -16,12 +16,15 @@ Perpetual Distribution is a new [Digital Matter Theory](https://digital-matter-t
 
 ## System Overview
 
-### On-chain Supply Validation
-**Purpose:** Determines asset supply based on emergent Bitcoin block data.
+## On-chain Supply Validation
 
-The on-chain supply validation system issues new non-fungible tokens based on patterns in Bitcoin block data, enabling dynamic and perpetual asset generation as new Bitcoin blocks are produced. Supply conditions for a collection are defined in the deployment inscription (e.g., `bits contains "3b"`), which references the on-chain validator to verify new blocks as they are mined. Once deployed, supply production is generative, immutable, and continues autonomously for as long as Bitcoin blocks are produced.  
+### Purpose
+Determines asset supply based on emergent Bitcoin block data.
 
-Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). Each validated block authorizes the production of one new asset within the collection. A finality buffer (e.g., 4 confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height +4.
+### Description
+The on-chain supply validation system issues new non-fungible tokens based on patterns in Bitcoin block data, enabling dynamic and perpetual asset generation as Bitcoin blocks are produced. Supply conditions for a collection are defined in the deployment inscription (e.g., bits contains "3b"), which references the on-chain validator to verify new blocks as they are mined. Once deployed, supply production is generative, immutable, and continues autonomously for as long as new Bitcoin blocks are produced.
+
+Validation occurs entirely on-chain through Ordinals recursive endpoints (`/r/blockinfo/<QUERY>`). Each validated block authorizes the production of one new asset within the collection. A finality buffer (e.g., four confirmations) mitigates reorg risk by ensuring that blocks are not validated until block height +4.
 
 
 ### On-chain Allocation
