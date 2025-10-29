@@ -34,7 +34,10 @@ Mint rights:
 - Never expire  
 - Are validated through the on-chain recursive system  
 
-Each newly inscribed asset immediately joins the asset pool and becomes eligible to win assets for future blocks.
+Each newly inscribed asset immediately joins the asset pool and becomes eligible to win assets for future blocks.  
+
+The system begins with a **seed index** of one or more initial assets, forming the first eligible pool for allocation.  
+From this starting pool, new assets are issued and added automatically, creating a self-sustaining distribution cycle on-chain.
 
 ---
 
