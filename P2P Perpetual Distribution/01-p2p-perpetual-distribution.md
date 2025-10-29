@@ -19,7 +19,7 @@ This enables decentralized production of Bitcoin-issued assets in perpetuity, wi
 ### 1. Supply Generation
 Collection supply is dynamic and controlled by the Bitcoin blockchain’s immutable data, which functions as a generative input governing asset issuance. Each asset corresponds to a specific Bitcoin block.  
 
-Each block is validated against the a supply condition for the collection (for example, `block's bits field contains "3b"`)  against Bitcoin Core to determine eligibility. When a block meets this condition, it authorizes the creation of one new asset.  
+Each block is validated using Bitcoin Core to determine whether it meets the collection’s supply condition (for example, when the block’s bits field contains "3b"). When a block meets this condition, it authorizes the creation of one new asset.
 
 Validation occurs directly on-chain via recursive calls, and new supply becomes eligible after +4 confirmations to account for potential chain reorganizations.
 
