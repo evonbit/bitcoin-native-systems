@@ -1,5 +1,5 @@
 # Bitcoin-Native P2P Perpetual Distribution  
-*A fully on-chain system for perpetual decentralized asset issuance on Bitcoin Ordinals.*
+*A fully on-chain system for decentralized asset issuance on Bitcoin Ordinals.*
 
 ## Introduction
 **Bitcoin-Native P2P Perpetual Distribution (“Perpetual Distribution”)** is a model for the autonomous generation and distribution of non-fungible assets on Bitcoin Ordinals.
@@ -19,14 +19,14 @@ This enables decentralized production of Bitcoin-issued assets in perpetuity, wi
 ### 1. Supply Generation
 Collection supply is dynamic and controlled by the Bitcoin blockchain’s immutable data, which functions as a generative input governing asset issuance. Each asset corresponds to a specific Bitcoin block.  
 
-Each block is validated using Bitcoin Core to determine whether it meets the collection’s supply condition (for example, when the block’s bits field contains "3b"). When a block meets this condition, it authorizes the creation of one new asset.
+Each block is validated against Bitcoin Core to determine whether it meets the collection’s supply condition (for example, when the block’s bits field contains "3b"). When a block meets this condition, it authorizes the creation of one new asset.
 
 Validation occurs directly on-chain via recursive calls, and new supply becomes eligible after +4 confirmations to account for potential chain reorganizations.
 
 ---
 
 ### 2. Allocation & Distribution
-When a the creation of a new asset is authorized, the **Distribution Engine** deterministically selects an existing asset in the collection as the **authorized parent** for the new asset, using the Bitcoin block’s hash as a deterministic random seed. Only the holder of the authorized parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
+When the creation of a new asset is authorized, the **Distribution Engine** deterministically selects an existing asset in the collection as the **authorized parent** for the new asset, using the Bitcoin block’s hash as a deterministic random seed. Only the holder of the authorized parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
 
 Mint rights:
 - Are allocated automatically  
