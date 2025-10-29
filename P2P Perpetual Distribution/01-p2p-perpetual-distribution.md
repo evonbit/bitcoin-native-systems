@@ -81,14 +81,14 @@ P2P Perpetual Distribution operates through a network of on-chain inscriptions c
 
              ┌──────────────────────────────┐
              │       Asset Inscription      │
-             └──────────────┬───────────────┘
+             └──────────────────────────────┘
+                            ▲
                             │
-                            ▼
              ┌──────────────────────────────┐──────────────┐
              │     Deployment Inscription   │              │
-             └──────────────┬───────────────┘              │
-                            │                              │
-                            ▼                              ▼
+             └──────────────────────────────┘              │
+                            ▲                              │
+                            │                              ▼
              ┌──────────────────────────────┐   ┌──────────────────────┐
              │  Dist. Engine Inscription    │──▶│  Index Access Point  │
              │  ├─ Supply Module            │   └──────────────────────┘
