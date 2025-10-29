@@ -26,8 +26,7 @@ Validation occurs directly on-chain via recursive calls, and new supply becomes 
 ---
 
 ### 2. Allocation & Distribution
-When a Bitcoin block meets the supply condition (e.g. `bits contains "3b"`), the **Distribution Engine** deterministically selects an existing asset *in the collection* as the **authorized parent**, using the Bitcoin block’s hash as a deterministic random seed.  
-Only the holder of that parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
+When a Bitcoin block meets the supply condition (e.g. `bits contains "3b"`), the **Distribution Engine** deterministically selects an existing asset *in the collection* as the **authorized parent**, using the Bitcoin block’s hash as a deterministic random seed. Only the holder of that parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
 
 Mint rights:
 - Are allocated automatically  
@@ -73,7 +72,7 @@ P2P Perpetual Distribution operates through a network of on-chain inscriptions c
   - **Supply Module** — Validates Bitcoin blocks against collection conditions, with calls to Bitcoin Core via Ordinals recursive endpoints.  
   - **Allocation Module** — Determines authorized parent assets via deterministic selection.  
 - **Index Access Point** — Returns the authorized parent and canonical asset ID for each block, accessed via the Deployment Inscription.  
-- **Asset Inscriptions** — Each individual asset inscription represents a unique asset within the collection. It delegates to the Deployment Inscription, which routes to other modules.
+- **Asset Inscriptions** — Each individual asset inscription represents a unique asset within the collection. Delegates to the Deployment Inscription, which routes to other modules.
 
 ---
 
@@ -155,6 +154,16 @@ You can query the canonical collection index in two ways:
 
 ---
 
+## Sample Deployment
+A sample deployment inscription (**Natcats**) can be found at  
+[`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0).  
+
+This deployment inscription defines the on-chain generative logic for **Natcats**, recursively calling the Distribution Engine Inscription for validation and allocation.  
+It represents the first live implementation of P2P Perpetual Distribution.
+
+
+---
+
 ## Background
 Perpetual Distribution is a new **Digital Matter Theory (DMT)** primitive that wraps the DMT **Unique Non-Arbitrary Token (UNAT)** framework and its required indexing functionalities in a fully on-chain system that does not require third-party protocol support.
 
@@ -177,4 +186,4 @@ To ensure sustainable, autonomous issuance for collections such as **Natcats**, 
 ---
 
 ## Natcats Deployment of P2PPD
-See [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/03-natcats-perpetual-distribution-upgrade.md) for information regarding the deployment of Perpetual Distribution for **natcats**.
+See [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/03-natcats-perpetual-distribution-upgrade.md) for information regarding the deployment of Perpetual Distribution for **Natcats**.
