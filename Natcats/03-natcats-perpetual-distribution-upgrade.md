@@ -59,3 +59,33 @@ Examples
 
 ## Holder Action
 - **No action is required** from holders.
+
+---
+
+## FAQ
+
+**Q: Do holders have to inscribe new Natcats when they’re awarded?**  
+**A:** Yes. The allocation of mint rights and art rendering are automatic, and indexing occurs automatically on inscription — but holders must perform the inscription to create the new asset.  
+
+Mint rights remain with the parent Natcat until utilized and persist through transfer or sale (they do not expire).  
+
+There is no mint fee for the inscription itself, though platform fees may apply depending on the inscription platform used.  
+
+---
+
+**Q: How will I know if my Natcat has been awarded mint rights for new supply?**  
+**A:** After a qualifying Natcats Bitcoin block is mined (approximately **+4 blocks** after confirmation to account for possible reorgs), the winner for that block becomes available and can be looked up via the **on-chain index**.  
+
+When checking manually, you’ll query one block at a time. You can also run a batch script or similar setup to generate a full list of awarded Natcats — making it easy for anyone to share results with the community or integrate data into marketplaces and web tools.  
+
+Both the on-chain index and sample scripts are available at [peertopeerelectroniccatssystem.com](http://peertopeerelectroniccatssystem.com).  
+
+---
+
+**Q: Are there any team dependencies required to issue new Natcats supply?**  
+**A:** No. As of the **Perpetual Distribution update**, Natcats distribution operates fully through a **P2P network** with all logic deployed **on-chain**.  
+
+Any holder can inscribe newly awarded Natcats using platforms that support **parent/child** and **delegation**, or directly through a **Bitcoin node with Ord**.  
+
+---
+
