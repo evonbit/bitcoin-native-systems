@@ -1,4 +1,4 @@
-# P2P Perpetual Distribution Update
+# Natcats P2P Perpetual Distribution Update
 
 As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through a **decentralized on-chain distribution system**.  
 
@@ -42,8 +42,8 @@ This represents the first fully decentralized implementation of autonomous asset
 
 ## Rendering
 - **Generations 5+** render natively in Ordinals explorers by default once inscribed.  
-- **Generations 1–4** render via the preexisting UNAT pathway (requires UNAT specific wallet support), but can optionally be **reinscribed** to enable native rendering.  
-- Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity. Instructions can be found at [COMING SOON] 
+- **Generations 1–4** render via the preexisting UNAT pathway (requires UNAT-specific wallet support), but can optionally be **reinscribed** to enable native rendering.  
+- Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity. Instructions can be found at [COMING SOON].  
 <!-- - See [How to Enable Gen 1–4 Native Rendering](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for reinscription instructions.  --->
 
 Examples  
@@ -53,7 +53,7 @@ Examples
 ---
 
 ## Treasury
-- Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, to enable a combination of long term holding, partnerships, sales, and acquisitions in support of the project’s legacy.  
+- Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, to enable a combination of long-term holding, partnerships, sales, and acquisitions in support of the project’s legacy.  
 
 ---
 
@@ -89,3 +89,12 @@ Any holder can inscribe newly awarded Natcats using platforms that support **par
 
 ---
 
+**Q: Does native render reinscription alter the canonical asset?**  
+**A:** No. The original asset always remains the canonical asset — it is never replaced.  
+
+When a native render reinscription is activated, it becomes packaged with the original asset and cannot be separated, as enforced by on-chain logic.  
+
+---
+
+**Q: Is native render reinscription required for my Gen 1–4 Natcat to be eligible for P2P Perpetual Distribution?**  
+**A:** No. Eligibility for P2P Perpetual Distribution is automatic for all assets in the collection, regardless of whether native render reinscription has been activated. No holder action is required.  
