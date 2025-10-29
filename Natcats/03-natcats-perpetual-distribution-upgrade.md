@@ -11,30 +11,28 @@ This represents the first fully decentralized implementation of autonomous asset
 ---
 
 ## Allocation
-- Natcats are produced when the pattern **3b** occurs in the hexadecimal representation of Bitcoin’s block difficulty data — a rare event that has occurred only **four** times in Bitcoin’s history. Each occurrence produces **2,016 Natcats**.  
-- When a Bitcoin block produces a new Natcat, the **block hash** is used to **select from a pool of all prior Natcats via an on-chain lottery**.  
-- The selected Natcat becomes the **authorized parent** for the new cat.  
-- Only the **holder of the authorized parent** can inscribe the new Natcat; all other inscription attempts are **rejected from indexing and will not render**, enforced by the on-chain system.  
-- As new supply is inscribed, it is **automatically added to the on-chain index**, which operates in perpetuity.  
-- Newly inscribed Natcats are **immediately added to the pool** and become eligible to win future Natcats blocks.  
-- Each Natcat held has an **equal chance** of winning new supply, and a holder’s chances increase **proportionally** as more Natcats are owned.  
-- This model eliminates all risk of **bot minting** and ensures new supply remains **within the holder base**.  
-- **Mint rights do not expire, and transfer with a parent Natcat until utilized.**  
-- The system operates **fully on-chain**, self-sustaining and **without centralized dependencies**.  
+Natcats are produced when the pattern **3b** occurs in the hexadecimal representation of Bitcoin’s block difficulty data — a rare event that has occurred only **four** times in Bitcoin’s history. Each occurrence produces **2,016 Natcats**.  
+
+When a Bitcoin block produces a new Natcat, its **block hash** is used to select an existing Natcat from the on-chain index through a lottery system. The selected Natcat becomes the **authorized parent** for the new cat, and only its holder is permitted to inscribe the new asset. Unauthorized inscription attempts are **rejected from indexing and will not render**, as enforced by the on-chain logic.  
+
+As new supply is inscribed, it is **automatically added to the on-chain index** and immediately becomes eligible to win future blocks. Each Natcat has an **equal chance** of being selected, with odds increasing **proportionally** to the number of Natcats a holder owns.  
+
+This model eliminates the risk of **bot minting**, keeps new supply **within the holder base**, and ensures that **mint rights never expire** — they transfer with the parent Natcat until used.  
+The system operates **fully on-chain**, **self-sustaining**, and **without centralized dependencies**.  
 
 ---
 
 ## Indexing
-- The P2PPD on-chain index updates automatically and in perpetuity as new Natcats are inscribed.
-- The index is published on-chain at:
+- The P2PPD on-chain index updates automatically and in perpetuity as new Natcats are inscribed.  
+- The index is published on-chain at:  
   [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0)  
-- For instructions on how to query the Natcats on-chain index and/or generate a local copy, see [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md) (*see “How to Query Index” section*).  
-- The on-chain index serves as the authoritative index moving forward, and functions as a hard fork of the previous Natcats index. The prior **TAP Protocol index** is valid up to block **919295**, and above this block is not authoritative.
+- For instructions on how to query the Natcats on-chain index or generate a local copy, see [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md) (*see “How to Query Index” section*).  
+- The on-chain index serves as the authoritative index moving forward and functions as a hard fork of the previous Natcats index. The prior **TAP Protocol index** is valid up to block **919295**, and above this block is no longer authoritative.  
 
 ---
 
 ## Minting
-- New Natcats can be inscribed via inscription tools that provide full support for delegation and parent/child. 
+- New Natcats can be inscribed via inscription tools that provide full support for **delegation** and **parent/child** relationships.  
 - There is **no mint fee**, though platform service fees may apply.  
 - Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
 
@@ -42,7 +40,7 @@ This represents the first fully decentralized implementation of autonomous asset
 
 ## Rendering
 - **Generations 5+** render natively in Ordinals explorers by default once inscribed.  
-- **Generations 1–4** render via the preexisting UNAT pathway (requires UNAT-specific wallet support), but can optionally be **reinscribed** to enable native rendering.  
+- **Generations 1–4** render via the preexisting UNAT pathway (requires UNAT-specific wallet support) but can optionally be **reinscribed** to enable native rendering.  
 - Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity. Instructions can be found at [COMING SOON].  
 <!-- - See [How to Enable Gen 1–4 Native Rendering](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for reinscription instructions.  --->
 
@@ -53,18 +51,19 @@ Examples
 ---
 
 ## Treasury
-- Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, to enable a combination of long-term holding, partnerships, sales, and acquisitions in support of the project’s legacy.  
+Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, supporting long-term holding, partnerships, sales, and acquisitions in service of the project’s legacy.  
 
 ---
 
 ## Holder Action
-- **No action is required** from holders.
+**No action is required** from holders.  
 
 ---
 
 ## FAQ
 
 **Q: Do holders have to inscribe new Natcats when they’re awarded?**  
+
 **A:** Yes. The allocation of mint rights and art rendering are automatic, and indexing occurs automatically on inscription — but holders must perform the inscription to create the new asset.  
 
 Mint rights remain with the parent Natcat until utilized and persist through transfer or sale (they do not expire).  
@@ -74,6 +73,7 @@ There is no mint fee for the inscription itself, though platform fees may apply 
 ---
 
 **Q: How will I know if my Natcat has been awarded mint rights for new supply?**  
+
 **A:** After a qualifying Natcats Bitcoin block is mined (approximately **+4 blocks** after confirmation to account for possible reorgs), the winner for that block becomes available and can be looked up via the **on-chain index**.  
 
 When checking manually, you’ll query one block at a time. You can also run a batch script or similar setup to generate a full list of awarded Natcats — making it easy for anyone to share results with the community or integrate data into marketplaces and web tools.  
@@ -83,6 +83,7 @@ Both the on-chain index and sample scripts are available at [peertopeerelectroni
 ---
 
 **Q: Are there any team dependencies required to issue new Natcats supply?**  
+
 **A:** No. As of the **Perpetual Distribution update**, Natcats distribution operates fully through a **P2P network** with all logic deployed **on-chain**.  
 
 Any holder can inscribe newly awarded Natcats using platforms that support **parent/child** and **delegation**, or directly through a **Bitcoin node with Ord**.  
@@ -90,6 +91,7 @@ Any holder can inscribe newly awarded Natcats using platforms that support **par
 ---
 
 **Q: Does native render reinscription alter the canonical asset?**  
+
 **A:** No. The original asset always remains the canonical asset — it is never replaced.  
 
 When a native render reinscription is activated, it becomes packaged with the original asset and cannot be separated, as enforced by on-chain logic.  
@@ -97,4 +99,5 @@ When a native render reinscription is activated, it becomes packaged with the or
 ---
 
 **Q: Is native render reinscription required for my Gen 1–4 Natcat to be eligible for P2P Perpetual Distribution?**  
+
 **A:** No. Eligibility for P2P Perpetual Distribution is automatic for all assets in the collection, regardless of whether native render reinscription has been activated. No holder action is required.  
