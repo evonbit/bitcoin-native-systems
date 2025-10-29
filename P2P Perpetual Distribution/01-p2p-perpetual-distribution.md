@@ -70,7 +70,7 @@ The asset for a specific block cannot be duplicated — only the first valid, co
 ## Architecture Overview
 P2P Perpetual Distribution operates through a network of on-chain inscriptions connected via recursive calls and delegation.
 
-- **Deployment Inscription** — Defines the collection’s parameters and generative art. Performs recursive calls to the Distribution Engine Inscription and serves as the collection index access point.  
+- **Deployment Inscription** — Defines the collection’s parameters and generative art. Performs recursive calls to the Distribution Engine Inscription and serves the collection index access point.  
 - **Distribution Engine Inscription** — Contains:  
   - **Supply Module** — Validates Bitcoin blocks against collection conditions, with calls to Bitcoin Core via Ordinals recursive endpoints.  
   - **Allocation Module** — Determines authorized parent assets via deterministic selection.  
