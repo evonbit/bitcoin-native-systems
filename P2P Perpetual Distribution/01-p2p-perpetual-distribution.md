@@ -19,7 +19,7 @@ This enables decentralized production of Bitcoin-issued assets in perpetuity, wi
 ### 1. Supply Generation
 Collection supply is dynamic and controlled by the Bitcoin blockchain’s immutable data, which functions as a generative input governing asset issuance. Each asset corresponds to a specific Bitcoin block.  
 
-Each block is validated against the a supply condition for the collection (for example, `block's bits field contains "3b"`)  using Bitcoin Core to determine eligibility. When a block meets this condition, it authorizes the creation of one new asset.  
+Each block is validated against the a supply condition for the collection (for example, `block's bits field contains "3b"`)  against Bitcoin Core to determine eligibility. When a block meets this condition, it authorizes the creation of one new asset.  
 
 Validation occurs directly on-chain via recursive calls, and new supply becomes eligible after +4 confirmations to account for potential chain reorganizations.
 
@@ -36,7 +36,7 @@ Mint rights:
 
 Each newly inscribed asset immediately joins the asset pool and becomes eligible to win assets for future blocks.  
 
-The system begins with a **seed index** of one or more initial assets, forming the first eligible pool for allocation.  
+The system begins with a seed index of one or more assets, forming the first eligible pool for allocation.  
 From this starting pool, new assets are issued and added automatically, creating a self-sustaining distribution cycle on-chain.
 
 ---
@@ -56,7 +56,7 @@ This makes it possible for anyone to verify allocation results, share them with 
 ---
 
 ### 4. Validation & Rendering
-All inscriptions are validated through recursive on-chain checks against the Distribution Engine. Assets will only render if they meet these validation rules, and valid inscriptions are added to the canonical collection index.  
+All inscriptions are validated through recursive on-chain checks against the Distribution Engine. Assets will only render if they meet these validation rules.  
 
 Validation rules ensure:
 - The block meets the defined supply condition  
@@ -158,11 +158,10 @@ You can query the canonical collection index in two ways:
 ---
 
 ## Sample Deployment
-A sample deployment inscription (**Natcats**) can be found at  
+An example deployment inscription (**Natcats**) can be found at  
 [`ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0`](https://ordinals.com/inscription/765eadb692a430b2ea43c34e6f6fdde6490651fd5496ebdb9946487e1e7337f4i0).  
 
-This deployment inscription defines the on-chain generative logic for **Natcats**, recursively calling the Distribution Engine Inscription for validation and allocation.  
-It represents the first live implementation of P2P Perpetual Distribution.
+This deployment inscription recursively calls the other on-chain modules.
 
 
 ---
