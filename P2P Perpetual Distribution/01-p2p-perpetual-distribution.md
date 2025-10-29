@@ -19,14 +19,14 @@ This enables decentralized production of Bitcoin-issued assets in perpetuity, wi
 ### 1. Supply Generation
 Collection supply is dynamic and controlled by the Bitcoin blockchain’s immutable data, which functions as a generative input governing asset issuance. Each asset corresponds to a specific Bitcoin block.  
 
-Each block is validated against Bitcoin Core to determine whether it meets the collection’s supply condition (for example, when the block’s bits field contains "3b"). When a block meets this condition, it authorizes the creation of one new asset.
+Each block is validated against Bitcoin Core to determine whether it meets the collection’s supply condition (e.g. block’s bits field must contain "3b"). When a block meets this condition, it authorizes the creation of one new asset.
 
 Validation occurs directly on-chain via recursive calls, and new supply becomes eligible after +4 confirmations to account for potential chain reorganizations.
 
 ---
 
 ### 2. Allocation & Distribution
-When the creation of a new asset is authorized, the **Distribution Engine** selects an existing asset in the collection as the **authorized parent** for the new asset, using the Bitcoin block’s hash as a deterministic random seed. Only the holder of the authorized parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
+When the creation of a new asset is authorized, the Distribution Engine selects an existing asset in the collection as the **authorized parent** for the new asset, using the Bitcoin block’s hash as a deterministic random seed. Only the holder of the authorized parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
 
 Mint rights:
 - Are allocated automatically  
@@ -48,8 +48,8 @@ Each new asset is indexed on inscription. The on-chain index maintains the canon
 - The resulting asset inscription ID  
 
 Indexing is fully autonomous and accessible via the Deployment Inscription or through provided scripts:
-- [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/index-script.py) — builds a local index of all or specific block ranges  
-- [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/authorization-script.py) — identifies authorized parents and allocation results  
+- [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/index-script.py) — builds a local index of valid inscription IDs for each block
+- [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/authorization-script.py) — builds a local list of authorized parents for each block  
 
 This makes it possible for anyone to verify allocation results, share them with the community, or integrate the data into marketplaces and analytical tools.
 
@@ -60,7 +60,7 @@ All inscriptions are validated through recursive on-chain checks against the Dis
 
 Validation rules ensure:
 - The block meets the defined supply condition  
-- The parent is the correct authorized winner  
+- The parent is the authorized parent  
 - No prior valid child exists for that block  
 
 The asset for a specific block cannot be duplicated — only the first valid, correctly structured inscription is recognized and rendered on-chain. Invalid or duplicate inscriptions are not indexed and will not render.
@@ -70,12 +70,12 @@ The asset for a specific block cannot be duplicated — only the first valid, co
 ## Architecture Overview
 P2P Perpetual Distribution operates through a network of on-chain inscriptions connected via recursive calls and delegation.
 
-- **Deployment Inscription** — Defines the collection’s parameters and generative art. Performs recursive calls to the Distribution Engine Inscription and serves as the canonical access point.  
+- **Deployment Inscription** — Defines the collection’s parameters and generative art. Performs recursive calls to the Distribution Engine Inscription and serves as the collection index access point.  
 - **Distribution Engine Inscription** — Contains:  
   - **Supply Module** — Validates Bitcoin blocks against collection conditions, with calls to Bitcoin Core via Ordinals recursive endpoints.  
   - **Allocation Module** — Determines authorized parent assets via deterministic selection.  
 - **Index Access Point** — Returns the authorized parent and canonical asset ID for each block, accessed via the Deployment Inscription.  
-- **Asset Inscriptions** — Each individual asset inscription represents a unique asset within the collection. Delegates to the Deployment Inscription, which routes to other modules.
+- **Asset Inscriptions** — Each individual asset inscription represents a unique asset within the collection. Asset inscriptions delegate to the Deployment Inscription, which routes to other modules.
 
 ---
 
@@ -92,7 +92,7 @@ P2P Perpetual Distribution operates through a network of on-chain inscriptions c
                             ▲                              │
                             │                              ▼
              ┌──────────────────────────────┐   ┌──────────────────────┐
-             │  Dist. Engine Inscription    │──▶│  Index Access Point  │
+             │  Dist. Engine Inscription    │   │  Index Access Point  │
              │  ├─ Supply Module            │   └──────────────────────┘
              │  └─ Allocation Module        │
              └──────────────────────────────┘
@@ -102,11 +102,10 @@ P2P Perpetual Distribution operates through a network of on-chain inscriptions c
 
 ## How to Interact with P2P Perpetual Distribution
 
-Collection holders and developers interact with P2PPD in the following way to verify allocations, inscribe new assets, and monitor ongoing distribution.
+Collection holders and developers interact with P2PPD in the following ways to verify allocations, inscribe new assets, and monitor ongoing distribution.
 
 ### 1. Allocation of Mint Rights
-When a qualifying Bitcoin block is mined, P2PPD automatically allocates mint rights to an existing holder through the on-chain allocation process.  
-Allocation of mint rights and indexing are both automatic. However, holders must take the action to inscribe the new asset (see [3. Inscribing New Assets](#3-inscribing-new-assets)).
+When a qualifying Bitcoin block is mined, P2PPD automatically allocates mint rights to an existing holder through the on-chain allocation process. Allocation of mint rights and indexing are both automatic. However, holders must take the action to inscribe the new asset (see [3. Inscribing New Assets](#3-inscribing-new-assets)).
 
 Mint rights remain attached to the authorized parent until used and persist through transfers or sales without expiry.
 
@@ -133,7 +132,7 @@ All validation, rendering, and indexing occur fully on-chain — no team involve
 To inscribe a new asset generated by P2PPD:
 
 1. **Check the Authorized Block Winner**  
-   - After block height +4, visit the Deployment Inscription or use the [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/authorization-script.py) to confirm the winning parent.
+   - After block height +4, visit the Deployment Inscription or use the [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/authorization-script.py) to confirm the authorized parent.
 
 2. **If You Hold the Authorized Parent**  
    - Inscribe as a child of the authorized parent  
@@ -169,9 +168,7 @@ This deployment inscription recursively calls the other on-chain modules.
 ## Background
 Perpetual Distribution is a new **Digital Matter Theory (DMT)** primitive that wraps the DMT **Unique Non-Arbitrary Token (UNAT)** framework and its required indexing functionalities in a fully on-chain system that does not require third-party protocol support.
 
-The UNAT standard, pioneered by **Natcats** in February 2024, introduced generative artwork whose supply and rarity are determined by emergent Bitcoin block data.  
-
-Previous UNAT implementations included the following models and dependencies:  
+The UNAT standard, pioneered by **Natcats** in February 2024, introduced generative artwork whose supply and rarity are determined by emergent Bitcoin block data. However, previous UNAT implementations included the following models and dependencies:  
 - **Open UNAT mints** – First-come claims by Bitcoin block ID. These were decentralized in principle but proved vulnerable to bots and unbalanced distribution in practice.  
 - **Privileged-authorization UNAT mints** – A central authority issues supply. This model avoids bots successfully but introduces a centralized dependency. It is suitable for initial one-time distributions but cannot guarantee long-term issuance.  
 - **Third-party indexers** – Both models rely on external indexers to track supply over time, which also cannot guarantee ongoing operation long term.  
