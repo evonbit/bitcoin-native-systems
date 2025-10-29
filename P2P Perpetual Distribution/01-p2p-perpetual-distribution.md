@@ -30,24 +30,24 @@ When the creation of a new asset is authorized, the **Distribution Engine** dete
 
 Mint rights:
 - Are allocated automatically  
-- Transfer with the parent asset  
+- Transfer with the parent asset until utilized
 - Never expire  
 - Are validated through the on-chain recursive system  
 
 Each newly inscribed asset immediately joins the asset pool and becomes eligible to win assets for future blocks.  
 
-The system begins with a seed index of one or more assets, forming the first eligible pool for allocation.  
+The system requires a seed index of one or more assets, forming the first eligible pool for allocation.  
 From this starting pool, new assets are issued and added automatically, creating a self-sustaining distribution cycle on-chain.
 
 ---
 
 ### 3. Indexing & Discovery
-Each new inscription updates the on-chain collection index, which maintains the canonical record of:
+Each new asset is indexed on inscription. The on-chain index maintains the canonical record of:
 - The Bitcoin block that produced the asset  
 - The authorized parent  
 - The resulting asset inscription ID  
 
-The index is fully autonomous and accessible via the Deployment Inscription or through provided scripts:
+Indexing is fully autonomous and accessible via the Deployment Inscription or through provided scripts:
 - [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/index-script.py) — builds a local index of all or specific block ranges  
 - [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/authorization-script.py) — identifies authorized parents and allocation results  
 
