@@ -26,7 +26,7 @@ Validation occurs directly on-chain via recursive calls, and new supply becomes 
 ---
 
 ### 2. Allocation & Distribution
-When a Bitcoin block meets the supply condition (e.g. `bits contains "3b"`), the **Distribution Engine** deterministically selects an existing asset *in the collection* as the **authorized parent**, using the Bitcoin block’s hash as a deterministic random seed. Only the holder of that parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
+When a the creation of a new asset is authorized, the **Distribution Engine** deterministically selects an existing asset in the collection as the **authorized parent** for the new asset, using the Bitcoin block’s hash as a deterministic random seed. Only the holder of the authorized parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
 
 Mint rights:
 - Are allocated automatically  
