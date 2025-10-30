@@ -122,8 +122,7 @@ This allows for transparent verification and open sharing of new allocation data
 ---
 
 ### 3. Inscribing New Assets
-If you hold the authorized parent, inscribe the newly awarded asset following the [Minting Instructions](#minting-instructions) below.  
-All validation, rendering, and indexing occur fully on-chain — no team involvement or centralized infrastructure is required.
+If you hold the authorized parent, inscribe the newly awarded asset following the [Minting Instructions](#minting-instructions) below. New Natcats can be inscribed via inscription tools that support delegation, undelegated content, and parent/child relationships.
 
 ---
 

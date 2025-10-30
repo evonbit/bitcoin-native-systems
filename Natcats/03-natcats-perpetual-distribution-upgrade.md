@@ -24,7 +24,7 @@ The system operates **autonomously on Bitcoin Ordinals** and in perpetuity—**w
 ---
 
 ## Minting
-- New Natcats can be inscribed via inscription tools that support **delegation** and **parent/child** relationships.  
+- New Natcats can be inscribed via inscription tools that support delegation, undelegated content, and parent/child relationships.
 - There is **no mint fee**, though platform service fees may apply.  
 - Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
 
@@ -33,8 +33,8 @@ The system operates **autonomously on Bitcoin Ordinals** and in perpetuity—**w
 ## Rendering
 - The update also unlocks native rendering in ordinals explorer
 - **Generations 5+** render natively in Ordinals explorers once inscribed.
-- **Generations 1–4** render via the UNAT pathway (requires UNAT-specific wallet support) but can be **reinscribed** for native rendering.  
-- Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity. Instructions can be found at [COMING SOON].  
+- **Generations 1–4** render via the UNAT default pathway (requires UNAT-specific wallet support) but can be **reinscribed** for native UNAT rendering.  
+- Reinscriptions are packaged with the canonical inscription and cannot be separated. Instructions can be found at [COMING SOON].  
 <!-- - See [How to Enable Gen 1–4 Native Rendering](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for reinscription instructions.  --->
 
 Examples  
@@ -68,13 +68,11 @@ Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, supporting
 
 Mint rights remain with the parent Natcat until utilized and persist through transfer or sale (they do not expire).  
 
-There is no mint fee for the inscription itself, though platform fees may apply depending on the inscription platform used.  
-
 ---
 
 **Q: How will I know if my Natcat has been awarded mint rights for new supply?**  
 
-**A:** After a qualifying Natcats Bitcoin block is mined (approximately **+4 blocks** after confirmation to account for possible reorgs), the winner for that block becomes available and can be looked up via the **on-chain index**.  
+**A:** After a qualifying Natcats Bitcoin block is mined (+4 blocks after confirmation), the winner for that block becomes available and can be looked up via the on-chain index.  
 
 When checking manually, you’ll query one block at a time. You can also run a batch script or similar setup to generate a full list of awarded Natcats — making it easy for anyone to share results with the community or integrate data into marketplaces and web tools.  
 
