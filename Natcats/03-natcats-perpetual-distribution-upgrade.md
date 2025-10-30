@@ -1,24 +1,17 @@
 # Natcats P2P Perpetual Distribution Update
 
-As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through a **decentralized on-chain distribution system**.  
+As of Bitcoin block **919296**, all future Natcats supply will be automatically issued to Natcats holders through **P2P Perpetual Distribution**, a Bitcoin-native distribution model developed by **@evonbit**.  
 
-Natcats will enable **P2P Perpetual Distribution**, a Bitcoin-native distribution model developed by **@evonbit**.  
-P2P Perpetual Distribution (P2PPD) automatically allocates mint rights for new Natcats supply among holders as it is produced by the Bitcoin Blockchain.  
-
-The system operates **autonomously on Bitcoin Ordinals** and in perpetuity—**without dependencies on third-party indexers or authorities**.  
-This represents the first fully decentralized implementation of autonomous asset production on the Bitcoin Blockchain and ensures the long-term integrity of Bitcoin’s first natively generated art collection.
+The system operates **autonomously on Bitcoin Ordinals** and in perpetuity—**without dependencies on third-party indexers or authorities**, ensuring the long-term decentralized operation of Bitcoin’s first natively generated art collection.
 
 ---
 
 ## Allocation
-Natcats are produced when the pattern **3b** occurs in the hexadecimal representation of Bitcoin’s block difficulty data — a rare event that has occurred only **four** times in Bitcoin’s history. Each occurrence produces **2,016 Natcats**.  
-
-When a Bitcoin block produces a new Natcat, its **block hash** is used to select an existing Natcat from the on-chain index through a lottery system. The selected Natcat becomes the **authorized parent** for the new cat, and only its holder is permitted to inscribe the new asset. Unauthorized inscription attempts are **rejected from indexing and will not render**, as enforced by the on-chain logic.  
-
-As new supply is inscribed, it is **automatically added to the on-chain index** and immediately becomes eligible to win future blocks. Each Natcat has an **equal chance** of being selected, with odds increasing **proportionally** to the number of Natcats a holder owns.  
-
-This model eliminates the risk of **bot minting**, keeps new supply **within the holder base**, and ensures that **mint rights never expire** — they transfer with the parent Natcat until used.  
-The system operates **fully on-chain**, **self-sustaining**, and **without centralized dependencies**.  
+- Natcats are produced when the pattern **3b** occurs in the hexadecimal representation of Bitcoin’s block difficulty data — a rare event that has occurred only **four** times in Bitcoin’s history. Each occurrence produces **2,016 Natcats**.  
+- When a Bitcoin block meets this condition, its **block hash** is used to select an existing Natcat from a pool of all existing Natcats via lottery.  
+- The selected Natcat becomes the **authorized parent**, and only its holder can inscribe the new asset. Unauthorized inscription attempts are **rejected from indexing and will not render**.  
+- Every Natcat has an **equal chance** to win, with odds increasing **proportionally** to the number of Natcats a holder owns.  
+- Each newly inscribed Natcat is **immediately added to the pool** and becomes eligible to win future blocks.  
 
 ---
 
@@ -32,15 +25,15 @@ The system operates **fully on-chain**, **self-sustaining**, and **without centr
 ---
 
 ## Minting
-- New Natcats can be inscribed via inscription tools that provide full support for **delegation** and **parent/child** relationships.  
+- New Natcats can be inscribed via inscription tools that support **delegation** and **parent/child** relationships.  
 - There is **no mint fee**, though platform service fees may apply.  
 - Follow detailed instructions [here](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/01-p2p-perpetual-distribution.md#minting-instructions) to mint with the correct parameters and syntax.  
 
 ---
 
 ## Rendering
-- **Generations 5+** render natively in Ordinals explorers by default once inscribed.  
-- **Generations 1–4** render via the preexisting UNAT pathway (requires UNAT-specific wallet support) but can optionally be **reinscribed** to enable native rendering.  
+- **Generations 5+** render natively in Ordinals explorers once inscribed.  
+- **Generations 1–4** render via the UNAT pathway (requires UNAT-specific wallet support) but can be **reinscribed** for native rendering.  
 - Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity. Instructions can be found at [COMING SOON].  
 <!-- - See [How to Enable Gen 1–4 Native Rendering](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for reinscription instructions.  --->
 
@@ -57,6 +50,13 @@ Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, supporting
 
 ## Holder Action
 **No action is required** from holders.  
+
+---
+
+## What P2P Distribution Unlocks for the Natcats Collection
+- Eliminates **bot minting** and ensures new supply remains **within the existing holder base**.  
+- Guarantees **mint rights never expire** — they transfer with the parent Natcat until used.  
+- Operates **fully on-chain**, **self-sustaining**, and **without centralized dependencies**, ensuring long-term autonomy, fairness, and verifiability for the Natcats collection.  
 
 ---
 
