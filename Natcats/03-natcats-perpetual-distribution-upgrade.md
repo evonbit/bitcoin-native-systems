@@ -53,8 +53,8 @@ Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, supporting
 
 ---
 
-## What P2P Distribution Unlocks for the Natcats Collection
-- Eliminates **bot minting** and ensures new supply remains **within the existing holder base**.  
+## What P2P Perpetual Distribution Unlocks
+- Eliminates risk of **bot minting** and ensures new supply remains **within the existing holder base**.  
 - Operates **fully on-chain**, **self-sustaining**, and **without centralized dependencies**, ensuring long-term autonomous operation for the Natcats collection.  
 - Introduces native rendering functionality
 
@@ -76,15 +76,11 @@ Mint rights remain with the parent Natcat until utilized and persist through tra
 
 When checking manually, you’ll query one block at a time. You can also run a batch script or similar setup to generate a full list of awarded Natcats — making it easy for anyone to share results with the community or integrate data into marketplaces and web tools.  
 
-Both the on-chain index and sample scripts are available at [peertopeerelectroniccatssystem.com](http://peertopeerelectroniccatssystem.com).  
-
 ---
 
 **Q: Are there any team dependencies required to issue new Natcats supply?**  
 
 **A:** No. As of the **Perpetual Distribution update**, Natcats distribution operates fully through a **P2P network** with all logic deployed **on-chain**.  
-
-Any holder can inscribe newly awarded Natcats using platforms that support **parent/child** and **delegation**, or directly through a **Bitcoin node with Ord**.  
 
 ---
 
