@@ -21,11 +21,11 @@ Collection supply is dynamic and controlled by the Bitcoin blockchain’s immuta
 
 Each block is validated against Bitcoin Core to determine whether it meets the collection’s supply condition (e.g. block’s bits field must contain "3b"). When a block meets this condition, it authorizes the creation of one new asset.
 
-Validation occurs directly on-chain via recursive calls, and new supply becomes eligible after +4 confirmations to account for potential chain reorganizations.
+Validation is performed on-chain via recursive calls, and new supply becomes eligible after +4 confirmations to account for potential chain reorganizations.
 
 ---
 
-### 2. Allocation & Distribution
+### 2. Allocation
 When the creation of a new asset is authorized, the Distribution Engine selects an existing asset in the collection as the **authorized parent** for the new asset, using the Bitcoin block’s hash as a deterministic random seed. Only the holder of the authorized parent may inscribe the new asset; unauthorized inscriptions are automatically rejected from indexing.  
 
 Mint rights:
@@ -34,15 +34,14 @@ Mint rights:
 - Never expire  
 - Are validated through the on-chain recursive system  
 
-Each newly inscribed asset immediately joins the asset pool and becomes eligible to win assets for future blocks.  
+Each new asset immediately joins the asset pool (at the time of block mining) and becomes eligible to win assets for future blocks.  
 
-The system requires a seed index of one or more assets, forming the first eligible pool for allocation.  
-From this starting pool, new assets are issued and added automatically, creating a self-sustaining distribution cycle on-chain.
+Perpetual Distribution requires a seed index of one or more assets, forming the first eligible pool for allocation. From this starting pool, new assets are issued and added automatically, creating a self-sustaining distribution cycle on-chain.
 
 ---
 
-### 3. Indexing & Discovery
-Each new asset is indexed on inscription. The on-chain index maintains the canonical record of:
+### 3. Indexing
+Each new asset is indexed automatically on inscription. The on-chain index maintains the canonical record of:
 - The Bitcoin block that produced the asset  
 - The authorized parent  
 - The resulting asset inscription ID  
@@ -51,7 +50,7 @@ Indexing is fully autonomous and accessible via the Deployment Inscription or th
 - [Indexing Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/index-script.py) — builds a local index of valid inscription IDs for each block
 - [Authorization Script](https://github.com/evonbit/bitcoin-native-systems/blob/main/P2P%20Perpetual%20Distribution/02-scripts/authorization-script.py) — builds a local list of authorized parents for each block  
 
-This makes it possible for anyone to verify allocation results, share them with the community, or integrate the data into marketplaces and analytical tools.
+This makes it possible for anyone to verify allocation results, share them with the community, or integrate the data into marketplaces and web tools.
 
 ---
 

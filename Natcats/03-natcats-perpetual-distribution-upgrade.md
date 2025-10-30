@@ -8,9 +8,8 @@ The system operates **autonomously on Bitcoin Ordinals** and in perpetuity—**w
 
 ## Allocation
 - Natcats are produced when the pattern **3b** occurs in the hexadecimal representation of Bitcoin’s block difficulty data — a rare event that has occurred only **four** times in Bitcoin’s history. Each occurrence produces **2,016 Natcats**.  
-- When a Bitcoin block meets this condition, its **block hash** is used to select an existing Natcat from a pool of all existing Natcats via lottery.  
-- The selected Natcat becomes the **authorized parent**, and only its holder can inscribe the new asset. Unauthorized inscription attempts are **rejected from indexing and will not render**.  
-- Every Natcat has an **equal chance** to win, with odds increasing **proportionally** to the number of Natcats a holder owns.  
+- As of the update, when a Bitcoin block meets this condition, its **block hash** is used to select an existing Natcat from a pool of all existing Natcats via lottery.  
+- The selected Natcat becomes the **authorized parent**, and only its holder can inscribe the new asset. Unauthorized inscription attempts are **rejected from indexing and will not render**.
 - Each newly inscribed Natcat is **immediately added to the pool** and becomes eligible to win future blocks.  
 
 ---
@@ -32,7 +31,8 @@ The system operates **autonomously on Bitcoin Ordinals** and in perpetuity—**w
 ---
 
 ## Rendering
-- **Generations 5+** render natively in Ordinals explorers once inscribed.  
+- The update also unlocks native rendering in ordinals explorer
+- **Generations 5+** render natively in Ordinals explorers once inscribed.
 - **Generations 1–4** render via the UNAT pathway (requires UNAT-specific wallet support) but can be **reinscribed** for native rendering.  
 - Reinscriptions are **permanently packaged with the canonical inscription’s sat** and will travel together in perpetuity. Instructions can be found at [COMING SOON].  
 <!-- - See [How to Enable Gen 1–4 Native Rendering](https://github.com/evonbit/bitcoin-native-systems/blob/main/Natcats/04-how-to-enable-native-render-reinscription.md) for reinscription instructions.  --->
@@ -55,8 +55,8 @@ Ten percent (10%) of new Natcats are allocated to a Natcats Treasury, supporting
 
 ## What P2P Distribution Unlocks for the Natcats Collection
 - Eliminates **bot minting** and ensures new supply remains **within the existing holder base**.  
-- Guarantees **mint rights never expire** — they transfer with the parent Natcat until used.  
-- Operates **fully on-chain**, **self-sustaining**, and **without centralized dependencies**, ensuring long-term autonomy, fairness, and verifiability for the Natcats collection.  
+- Operates **fully on-chain**, **self-sustaining**, and **without centralized dependencies**, ensuring long-term autonomous operation for the Natcats collection.  
+- Introduces native rendering functionality
 
 ---
 
